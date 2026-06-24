@@ -1,0 +1,166 @@
+/* ===================================================================
+   EDARA DESIGN SYSTEM — COMPONENT STYLES
+   These were injected at runtime by the prototype's component bundle;
+   ported here as static CSS. (Badge, Eyebrow and StatTile use inline
+   styles in their components and need no CSS here.)
+   =================================================================== */
+
+/* ---- Card -------------------------------------------------------- */
+.edara-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+}
+.edara-card--raised { background: var(--surface-card-raised); }
+.edara-card--interactive {
+  transition: transform .4s var(--ease-tactile),
+    box-shadow .4s var(--ease-tactile), border-color .4s ease;
+}
+.edara-card--interactive:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-bento-hover);
+}
+@media (prefers-reduced-motion: reduce) {
+  .edara-card--interactive { transition: none; }
+  .edara-card--interactive:hover { transform: none; }
+}
+
+/* ---- BentoCard --------------------------------------------------- */
+.edara-bento { display: flex; flex-direction: column; gap: 24px; height: 100%; }
+.edara-bento__icon {
+  height: 48px; width: 48px; border-radius: var(--radius-lg);
+  background: var(--primary-fixed); color: var(--primary); display: flex;
+  align-items: center; justify-content: center; transition: all .3s ease; flex: none;
+}
+.edara-card--interactive:hover .edara-bento__icon {
+  background: var(--primary); color: #fff; transform: rotate(5deg) scale(1.1);
+}
+.edara-bento__icon .material-symbols-outlined {
+  font-size: 24px; font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+.edara-bento__title {
+  font-family: var(--font-display); font-size: 24px; line-height: 32px;
+  font-weight: 600; color: var(--on-surface); margin: 0 0 8px;
+}
+.edara-bento__body {
+  font-family: var(--font-body); font-size: 16px; line-height: 24px;
+  color: var(--on-surface-variant); margin: 0;
+}
+.edara-bento__foot {
+  margin-top: auto; padding-top: 24px; border-top: 1px solid var(--border-subtle);
+  display: flex; flex-direction: column; gap: 8px; list-style: none; padding-left: 0; margin-bottom: 0;
+}
+.edara-bento__item {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em;
+  color: var(--on-surface-variant);
+}
+.edara-bento__item .material-symbols-outlined {
+  font-size: 18px; color: var(--primary);
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+@media (prefers-reduced-motion: reduce) {
+  .edara-card--interactive:hover .edara-bento__icon { transform: none; }
+}
+
+/* ---- Button ------------------------------------------------------ */
+.edara-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-size: 14px; line-height: 20px; font-weight: 600;
+  border-radius: var(--radius-lg); border: 1px solid transparent; cursor: pointer;
+  transition: transform .2s var(--ease-tactile), filter .2s var(--ease-tactile),
+              background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  text-decoration: none; white-space: nowrap; user-select: none;
+}
+.edara-btn:hover { transform: translateY(-2px); }
+.edara-btn:active { transform: translateY(1px) scale(0.97); }
+.edara-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.edara-btn--block { width: 100%; }
+.edara-btn[disabled] { opacity: .5; cursor: not-allowed; transform: none; }
+
+.edara-btn--primary { background: var(--primary); color: var(--on-primary); }
+.edara-btn--primary:hover { filter: brightness(1.08); }
+
+.edara-btn--outline { background: transparent; color: var(--on-surface); border-color: var(--outline); }
+.edara-btn--outline:hover { background: var(--surface-container); }
+
+.edara-btn--glass {
+  background: rgba(255,255,255,.1); color: var(--on-primary);
+  border-color: rgba(255,255,255,.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.edara-btn--glass:hover { background: rgba(255,255,255,.18); }
+
+.edara-btn--inverse { background: var(--surface); color: var(--primary); box-shadow: var(--shadow-sm); }
+.edara-btn--inverse:hover { filter: brightness(1.02); box-shadow: var(--shadow-card-hover); }
+
+.edara-btn .material-symbols-outlined {
+  font-size: 20px; font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+  transition: transform .2s var(--ease-tactile);
+}
+.edara-btn:hover .edara-btn__icon--forward { transform: translateX(4px); }
+@media (prefers-reduced-motion: reduce) {
+  .edara-btn, .edara-btn .material-symbols-outlined { transition: none; }
+  .edara-btn:hover, .edara-btn:active { transform: none; }
+}
+
+/* ---- PricingCard ------------------------------------------------- */
+.edara-price {
+  background: var(--surface); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl); padding: 40px; display: flex; flex-direction: column;
+  position: relative; transition: transform .3s ease, box-shadow .3s ease; height: 100%;
+}
+.edara-price:hover { transform: scale(1.02); box-shadow: 0 20px 40px -10px rgba(0,91,191,.15); }
+.edara-price--featured { border: 2px solid var(--primary); box-shadow: var(--shadow-sm); }
+.edara-price--featured:hover {
+  transform: scale(1.02) translateY(-16px); box-shadow: var(--shadow-featured-hover);
+}
+.edara-price__badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); z-index: 1; }
+.edara-price__name {
+  font-family: var(--font-display); font-size: 32px; line-height: 40px;
+  font-weight: 600; color: var(--on-surface); margin: 8px 0 0;
+}
+.edara-price__amt { display: flex; align-items: baseline; margin-top: 16px; }
+.edara-price__amt b {
+  font-family: var(--font-display); font-size: 56px; line-height: 64px;
+  font-weight: 700; letter-spacing: -.02em;
+}
+.edara-price__per { font-family: var(--font-body); font-size: 16px; color: var(--on-surface-variant); margin-left: 8px; }
+.edara-price__desc {
+  font-family: var(--font-body); font-size: 16px; line-height: 24px;
+  color: var(--on-surface-variant); margin: 24px 0 40px; flex-grow: 1;
+}
+.edara-price__list { list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-direction: column; gap: 16px; }
+.edara-price__li {
+  display: flex; align-items: flex-start; gap: 16px;
+  font-family: var(--font-body); font-size: 16px; color: var(--on-surface);
+}
+.edara-price__li .material-symbols-outlined {
+  font-size: 22px; color: var(--primary); flex: none;
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+@media (prefers-reduced-motion: reduce) {
+  .edara-price, .edara-price--featured { transition: none; }
+  .edara-price:hover, .edara-price--featured:hover { transform: none; }
+}
+
+/* ---- Input ------------------------------------------------------- */
+.edara-field { display: flex; flex-direction: column; gap: 8px; }
+.edara-field__label {
+  font-family: var(--font-mono); font-size: 12px; line-height: 16px;
+  font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--on-surface);
+}
+.edara-field__control {
+  width: 100%; box-sizing: border-box; background: var(--surface);
+  border: 1px solid var(--border-subtle); border-radius: var(--radius-lg);
+  padding: 12px 16px; font-family: var(--font-body); font-size: 16px; line-height: 24px;
+  color: var(--on-surface); outline: none; transition: border-color .2s ease, box-shadow .2s ease;
+}
+.edara-field__control::placeholder { color: var(--secondary); }
+.edara-field__control:focus {
+  border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary), var(--shadow-input-focus);
+}
+textarea.edara-field__control { min-height: 100px; resize: vertical; }
+.edara-field--error .edara-field__control { border-color: var(--error); }
+.edara-field__error { font-family: var(--font-body); font-size: 12px; color: var(--error); }
