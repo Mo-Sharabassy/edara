@@ -409,6 +409,13 @@
   /* Fix 5a — Oversized quote mark */
   .ek-quote             { font-size: 56px !important; height: auto; }
 
+  /* Fix A — Event-card stat row overflow
+     The stat flex row is non-wrapping by default; long values like
+     "Operations" clip at the card edge on 360–390 px phones.
+     Allow wrapping and cap the value font-size to prevent overflow. */
+  .ek-evdetail__stats   { flex-wrap: wrap; gap: 16px 24px; }
+  .ek-evdetail__stats strong { font-size: 18px; }
+
   /* Tap-target floor: 44 px on all button-role elements */
   .ek-evrow             { min-height: 44px; }
 
