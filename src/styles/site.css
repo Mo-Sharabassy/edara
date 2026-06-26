@@ -173,6 +173,9 @@
 .ek-inforow__icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
   flex: none; border-radius: var(--radius-lg); background: var(--primary-fixed); color: var(--primary);
   font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+.ek-inforow__icon.material-symbols-outlined {
+  display: inline-flex; align-items: center; justify-content: center;
+}
 .ek-inforow__k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
   color: var(--on-surface-variant); margin: 0 0 4px; }
 .ek-inforow__v { font-family: var(--font-body); font-size: 16px; color: var(--on-surface); margin: 0; }
