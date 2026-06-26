@@ -306,6 +306,10 @@
   .ek-article__title { font-size: 32px; }
   .ek-feature-article__t { font-size: 26px; }
   .ek-selectbar__inner { flex-direction: column; align-items: stretch; }
+  .ek-selectbar__txt   { min-width: 0; flex-wrap: wrap; }
+  .ek-selectbar__s     { white-space: normal; font-size: 10px; }
+  .ek-selectbar__act   { width: 100%; }
+  .ek-selectbar__act > * { flex: 1; }
 
   /* Fix 5b — Agency card: 96 px percentage and 44 px "%" superscript overflow on phone */
   .ek-agencycard__pct          { font-size: 64px; }
