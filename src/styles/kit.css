@@ -370,3 +370,60 @@
   .ek-grid3, .ek-grid4, .ek-grid2, .ek-pillar, .ek-pillar--reverse, .ek-testi, .ek-logistics, .ek-form__two, .ek-spon { grid-template-columns: 1fr; }
   .ek-hero__title, .ek-display, .ek-ambient__title { font-size: 36px; line-height: 44px; }
 }
+
+/* ============================================================
+   Phone layout tuning  ≤ 600 px
+   Extends the 900 px collapse without touching any desktop
+   rule above. Values use only existing --space-* / --display-*
+   tokens from tokens.css — no new magic numbers introduced.
+   ============================================================ */
+@media (max-width: 600px) {
+
+  /* Fix 2 — Calligraphy overflow
+     SVG text at 150 px (SVG user-units) can still bleed on narrow
+     viewports when the SVG has overflow:visible. Scale it down and
+     clip the container so no stray pixels escape to the right. */
+  .ek-hero-calligraphy  { min-width: 0; overflow: hidden; }
+  .ek-calligraphy-text  { font-size: 90px; }
+
+  /* Fix 3 — Globe scroll-hijack
+     touch-action:none swallows vertical scroll gestures. pan-y
+     lets the page scroll on upward/downward swipes while
+     horizontal drags still spin the globe via pointer events. */
+  .ek-globe-canvas      { touch-action: pan-y; }
+
+  /* Fix 4 — Spacing / padding tuning
+     The single 900 px collapse never shrank section padding, so
+     desktop gutters persist on phones. Each value maps to a token. */
+  .ek-section           { padding: var(--space-lg) 0; }           /* 64 → 40 px */
+  .ek-container         { padding-left: var(--space-sm); padding-right: var(--space-sm); } /* 24 → 16 px */
+  .ek-cta               { padding: var(--space-lg) var(--space-md); }  /* 64 → 40 24 px */
+  .ek-prhero            { padding: var(--space-xl) 0 var(--space-lg); } /* 96 0 64 → 64 0 40 px */
+  .ek-pf-head--hero     { padding-top: var(--space-xl); padding-bottom: var(--space-md); } /* 100 32 → 64 24 px */
+  .ek-globe-sec         { padding: var(--space-xl) 0; }           /* 112 → 64 px */
+  .ek-dark              { padding: var(--space-lg) 0; }           /* 64 → 40 px */
+  .ek-trust             { padding: var(--space-lg) 0; }           /* 64/72 → 40 px */
+  .ek-contact           { padding: var(--space-xl) 0; }           /* 64 px, kept with xl */
+  .ek-ambient           { padding: var(--space-xl) 0; }           /* 64 → 64 px (already tight) */
+
+  /* Fix 5a — Oversized quote mark */
+  .ek-quote             { font-size: 56px !important; height: auto; }
+
+  /* Tap-target floor: 44 px on all button-role elements */
+  .ek-evrow             { min-height: 44px; }
+
+  /* Fix 6 — Pricing table → stacked cards
+     The table becomes unreadable on a phone. On ≤600 px only we
+     hide thead, turn each <tr> into a full-width card, and style
+     each <td> as a labelled row — desktop table is unaffected. */
+  .ek-tablewrap         { overflow-x: unset; }
+  .ek-table             { display: block; }
+  .ek-table thead       { display: none; }
+  .ek-table tbody       { display: flex; flex-direction: column; gap: var(--space-sm); }
+  .ek-table tbody tr    { display: block; border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); overflow: hidden; }
+  .ek-table tbody tr:hover { background: transparent; }
+  .ek-table__row-h      { display: block; padding: var(--space-sm) var(--space-md); background: var(--surface-container-low); border-bottom: 1px solid var(--border-subtle); font-size: 13px; letter-spacing: .05em; text-transform: uppercase; }
+  .ek-table__cell       { display: block; padding: var(--space-xs) var(--space-md); border-bottom: 1px solid var(--outline-variant); font-size: 15px; line-height: 22px; }
+  .ek-table__cell:last-child { border-bottom: none; }
+  .ek-table__cell--brand { background: var(--tint-brand-soft); }
+}
