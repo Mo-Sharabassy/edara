@@ -39,22 +39,24 @@ export function HomePortfolio() {
           <Reveal>
             <div className="ek-hero-row">
               <div className="ek-hero-text">
-                <h2 className="ek-display ek-hero-display">
-                  Your events,
-                  <br />
-                  <span className="ek-wordpop ek-wordpop--1">handled</span>.
-                </h2>
+                <div className="ek-hero-lockup">
+                  <h2 className="ek-display ek-hero-display">
+                    Your events,
+                    <br />
+                    <span className="ek-wordpop ek-wordpop--1">handled</span>.
+                  </h2>
+                  <div className="ek-hero-calligraphy" aria-hidden="true">
+                    <svg viewBox="0 0 520 300" role="img" aria-label="Edara written in Arabic calligraphy">
+                      <text x="260" y="205" className="ek-calligraphy-text" textAnchor="middle">
+                        إداره
+                      </text>
+                    </svg>
+                  </div>
+                </div>
                 <p className="ek-lead ek-hero-lead">
                   We plan, build and manage your presence at the world&apos;s best events — spin the
                   globe to explore our portfolio.
                 </p>
-              </div>
-              <div className="ek-hero-calligraphy" aria-hidden="true">
-                <svg viewBox="0 0 520 300" role="img" aria-label="Edara written in Arabic calligraphy">
-                  <text x="260" y="205" className="ek-calligraphy-text" textAnchor="middle">
-                    إداره
-                  </text>
-                </svg>
               </div>
             </div>
           </Reveal>
