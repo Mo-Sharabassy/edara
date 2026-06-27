@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className="edara-footer">
       <div className="edara-footer__inner">
-        <Link href="/" style={{ cursor: "pointer", display: "inline-flex" }}>
+        <Link href="/" style={{ cursor: "pointer", display: "inline-flex", textDecoration: "none" }}>
           <EdaraLogo height={28} tone="muted" />
         </Link>
         <div className="edara-footer__links">

@@ -76,11 +76,10 @@
 .edara-nav__inner > :first-child { cursor: pointer; }
 
 /* Brand lockup: logo + tagline sit together at the left of the header */
-.edara-nav__brand { display: inline-flex; align-items: center; gap: 14px; }
+.edara-nav__brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
 .edara-nav__tag { font-family: var(--font-body); font-size: 12px; font-weight: 600;
   letter-spacing: .14em; text-transform: uppercase; color: var(--on-surface-variant);
   padding-left: 14px; border-left: 1px solid var(--border-subtle); line-height: 1.2; white-space: nowrap; }
-@media (max-width: 1000px) { .edara-nav__tag { display: none; } }
 
 /* Center the nav links to the true middle of the header */
 .edara-nav__inner { position: relative; }
@@ -319,6 +318,7 @@
   .ek-agencycard__pct small    { font-size: 32px; }
   .ek-agencycard__figure       { padding: var(--space-lg) var(--space-md); } /* 56/40 → 40 24 px */
   .ek-agencycard__body         { padding: var(--space-md); }                 /* 48 → 24 px */
+  .edara-footer__inner { flex-direction: column; align-items: flex-start; gap: 24px; }
 }
 
 /* ---------------------------------------------------------------- Services intro */
