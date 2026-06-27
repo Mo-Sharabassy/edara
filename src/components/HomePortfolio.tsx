@@ -23,6 +23,11 @@ export function HomePortfolio() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxOpen]);
+
+  React.useEffect(() => {
+    document.body.style.overflowY = lightboxOpen ? "hidden" : "";
+    return () => { document.body.style.overflowY = ""; };
+  }, [lightboxOpen]);
   const selected = events.find((e) => e.id === selectedId) || events[0];
   if (!selected) return null;
 
