@@ -35,6 +35,7 @@
 @media (prefers-reduced-motion: reduce) { .ek-route { animation: none; } }
 
 /* ---------------------------------------------------------------- Mobile nav */
+.ek-mnav__inner > a, .ek-drawer__top > a { text-decoration: none; }
 .ek-mnav { position: sticky; top: 0; z-index: 50; display: none;
   background: rgba(251,249,248,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle); }
