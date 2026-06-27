@@ -23,7 +23,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: "How do we charge?",
-    a: "Per event — or as a flat monthly retainer billed quarterly. Three department tiers: Planner (€3,300/mo) for 3–5 events a year, Fractional (€5,700/mo) for up to 7 events a year, and Unlimited (€9,900/mo) for 8+ global roadshows. Versus a six-figure full-time hire or 15–20% agency commissions, it's a flat retainer or a fixed 10%.",
+    a: "Per event — or as a flat monthly retainer billed quarterly. Three department tiers: Planner (€3,300/mo) for 3–5 events a year, Fractional (€5,700/mo) for up to 7 events a year, and Unlimited (€9,900/mo) for 8+ global roadshows. Versus a six-figure full-time hire or 15–20% agency commissions, it's a flat retainer or a fixed 15%.",
   },
   {
     q: "What do we actually handle?",
