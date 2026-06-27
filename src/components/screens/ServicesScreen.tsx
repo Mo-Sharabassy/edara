@@ -76,7 +76,7 @@ export function ServicesScreen() {
             <Eyebrow>
               Our know how
             </Eyebrow>
-            <h2 className="ek-h2">We handle everthing between the brief and the breakdown.</h2>
+            <h2 className="ek-h2">We handle everything between the brief and the breakdown.</h2>
           </Reveal>
           <div className="ek-grid3" style={{ alignItems: "stretch" }}>
             <Reveal delay={0}>
