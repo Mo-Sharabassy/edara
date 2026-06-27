@@ -80,7 +80,8 @@
 .edara-nav__brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
 .edara-nav__tag { font-family: var(--font-body); font-size: 12px; font-weight: 600;
   letter-spacing: .14em; text-transform: uppercase; color: var(--on-surface-variant);
-  padding-left: 14px; border-left: 1px solid var(--border-subtle); line-height: 1.2; white-space: nowrap; }
+  padding-left: 14px; border-left: 1px solid var(--border-subtle); line-height: 1.2; white-space: nowrap;
+  transform: translateY(1px); }
 
 /* Center the nav links to the true middle of the header */
 .edara-nav__inner { position: relative; }
