@@ -333,13 +333,39 @@
   .ek-feature-article__img { min-height: 240px; }
   .ek-feature-article__body { padding: 32px; }
 }
+/* ---------------------------------------------------------------- Hero-to-globe gap (item 6) */
+/* kit.css: .ek-pf-head--hero { padding-bottom: 32px } + .ek-globe-sec--joined { padding-top: 24px }
+   = 56px gap between description and globe. Tighten to 8+8=16px so the globe reads as part of
+   the same block rather than a separate section below. */
+.ek-pf-head--hero { padding-bottom: 8px; }
+.ek-globe-sec--joined { padding-top: 8px; }
+
+/* ---------------------------------------------------------------- Hero lockup (item 5) */
+/* Calligraphy is now a sibling of the h2 inside .ek-hero-text.
+   space-between keeps h2 on the left and calligraphy on the right at desktop widths,
+   matching the previous side-by-side look. flex-wrap lets them stack on narrow viewports. */
+.ek-hero-lockup { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+/* On mobile the calligraphy fills its own row so it never overflows or sits oddly beside the h2. */
+@media (max-width: 767px) {
+  .ek-hero-lockup .ek-hero-calligraphy { flex: 0 0 100%; min-width: 0; }
+}
+
 /* B5/B9 — phone-range overrides (767px = mobile nav threshold) */
 @media (max-width: 767px) {
   /* B5: 4-stat grid steps to 2×2; kit.css collapses to 1fr at ≤900px for mid-tablets */
   .ek-grid4 { grid-template-columns: 1fr 1fr; }
+  /* Prevent grid cells from exceeding their track width (default min-width:auto can overflow) */
+  .ek-grid4 > * { min-width: 0; }
   /* B9: calligraphy SVG text reduced one step earlier so it doesn't dominate the hero
      in the 600–767px range (kit.css already does 90px at ≤600px; this just pulls it up) */
   .ek-calligraphy-text { font-size: 90px; }
+}
+
+/* Item 4: stat tile compact sizing — at <=480px the 2×2 cells are only ~144px wide;
+   the 40px padding and 56px number both need to step down so nothing clips. */
+@media (max-width: 480px) {
+  .ek-stat-cell { padding: 20px !important; min-height: 120px !important; }
+  .ek-stat-cell h3 { font-size: 36px !important; line-height: 44px !important; }
 }
 
 @media (max-width: 600px) {
@@ -365,6 +391,11 @@
   .ek-mnav__inner .edara-nav__tag { font-size: 9px; letter-spacing: .1em; padding-left: 10px; }
   /* B10: pricing hero top padding is 96px desktop; reduce on mobile so content starts sooner */
   .ek-prhero { padding: 56px 0 40px; }
+
+  /* Item 3: logos trust band — uniform 2-col grid with odd logo centred */
+  .ek-trust__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; justify-items: center; }
+  .ek-trust__logo { font-size: 18px; }
+  .ek-trust__logo:last-child { grid-column: 1 / -1; }
 }
 
 /* ---------------------------------------------------------------- Services intro */
