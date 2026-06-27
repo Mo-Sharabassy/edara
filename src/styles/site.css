@@ -194,7 +194,7 @@
 /* ---------------------------------------------------------------- Contact page */
 .ek-contactpage { background: var(--surface-page); }
 .ek-contactsplit { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
-.ek-contactaside { position: sticky; top: 112px; display: flex; flex-direction: column; gap: 28px; }
+.ek-contactaside { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 28px; }
 .ek-contactaside__lead { font-family: var(--font-body); font-size: 18px; line-height: 28px; color: var(--on-surface-variant); margin: 0; }
 .ek-infolist { display: flex; flex-direction: column; gap: 4px; }
 .ek-inforow { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-top: 1px solid var(--border-subtle); }

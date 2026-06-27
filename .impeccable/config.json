@@ -8,6 +8,12 @@
         "value": "ek-ask-bounce",
         "reason": "Typing-indicator dots in chat UI — domain-appropriate bounce, not UI element easing",
         "createdAt": "2026-06-27T18:14:56.015Z"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(.34, 1.56, .64, 1)",
+        "reason": "wordpop hero headline spring animation — intentional micro-interaction, not UI element easing",
+        "createdAt": "2026-06-27T22:30:18.076Z"
       }
     ]
   }
