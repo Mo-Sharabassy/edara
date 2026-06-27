@@ -24,7 +24,7 @@ const ASK_SUGGESTIONS = ["What does Edara do?", "How does pricing work?", "Where
 function localFallback(q: string): string {
   const s = q.toLowerCase();
   if (/(price|cost|how much|pricing|fee|€|\$|budget|plan)/.test(s))
-    return "We partner two ways. The Agency model is a flat 10% of the event budget we manage — best for variable, big-budget events. The Department model is a fixed fractional events team billed quarterly: Planner €3,300/mo, Fractional €5,700/mo, and Unlimited €9,900/mo.";
+    return "We partner two ways. The Agency model is a flat 15% of the event budget we manage — best for variable, big-budget events. The Department model is a fixed fractional events team billed quarterly: Planner €3,300/mo, Fractional €5,700/mo, and Unlimited €9,900/mo.";
   if (/(where|country|countries|location|germany|global|outside)/.test(s))
     return "Edara is a German company with worldwide operations — we've delivered events in 20+ countries. Wherever your event is, we can run it on the ground.";
   if (/(what|do you|handle|service|include|offer)/.test(s))

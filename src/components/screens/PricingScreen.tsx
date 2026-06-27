@@ -11,7 +11,7 @@ import { savePlan } from "@/lib/plan";
 /**
  * Pricing screen — two partnership models:
  *   • Department — a fixed fractional events department, billed quarterly.
- *   • Agency     — 10% of managed event spend, performance-aligned, no retainer.
+ *   • Agency     — 15% of managed event spend, performance-aligned, no retainer.
  */
 type DeptTier = {
   id: string;
@@ -85,7 +85,7 @@ function ModelToggle({
   setModel: (m: string) => void;
 }) {
   const options = [
-    { id: "agency", label: "Agency", sub: "10% of managed spend" },
+    { id: "agency", label: "Agency", sub: "15% of managed spend" },
     { id: "department", label: "Department", sub: "Fixed quarterly partnership" },
   ];
   return (
@@ -121,7 +121,7 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
     {
       icon: "receipt_long",
       t: "One transparent line",
-      d: "Booth, sponsorship, venue and logistics rolled into a single 10% fee. No project markups, no surprises.",
+      d: "Booth, sponsorship, venue and logistics rolled into a single 15% fee. No project markups, no surprises.",
     },
   ];
   return (
@@ -129,7 +129,7 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
       <Reveal className="ek-agencycard">
         <div className="ek-agencycard__figure">
           <span className="ek-agencycard__pct">
-            10<small>%</small>
+            15<small>%</small>
           </span>
           <p className="ek-agencycard__cap">of managed event spend</p>
           <Badge variant="soft">Performance-aligned</Badge>
@@ -139,7 +139,7 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
             Partner on performance
           </h3>
           <p className="ek-lead" style={{ marginBottom: 24 }}>
-            Pay as you grow. Edara charges a flat 10% of the budget we manage on your behalf — We
+            Pay as you grow. Edara charges a flat 15% of the budget we manage on your behalf — We
             make sure every dollar of that budget work harder for you.
           </p>
           <Button variant="primary" size="lg" icon="arrow_forward" onClick={onContact}>
@@ -292,7 +292,7 @@ export function PricingScreen() {
                     "Cost structure",
                     "€100k+ salary + benefits",
                     "15–20% commission + fees",
-                    "Retainer fee or a fixed 10%",
+                    "Retainer fee or a fixed 15%",
                   ],
                   [
                     "Budget control",
