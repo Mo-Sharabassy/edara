@@ -18,17 +18,17 @@ export function ServicesScreen() {
   const shiftPoints = [
     {
       icon: "inventory_2",
-      t: "Off your plate",
+      t: "Efficiency",
       d: "One brief goes in. A finished event comes out. You approve the direction; we run everything underneath it.",
     },
     {
       icon: "hub",
-      t: "One team, every part",
+      t: "One POC",
       d: "Design, build, sponsorship, merch and on-site — under one roof, with a single point of contact.",
     },
     {
       icon: "sync",
-      t: "Your cycle, intact",
+      t: "Integration",
       d: "We learn how your team already works. No reorg, no new hire, no disruption to your roadmap.",
     },
   ];
@@ -50,7 +50,7 @@ export function ServicesScreen() {
       <section className="ek-section ek-offwhite">
         <div className="ek-container ek-pillar ek-pillar--reverse">
           <Reveal className="ek-pillar__copy">
-            <Eyebrow variant="numbered" number="01">
+            <Eyebrow>
               Who we are
             </Eyebrow>
             <h2 className="ek-h2">A professional events company</h2>
@@ -73,7 +73,7 @@ export function ServicesScreen() {
       <section className="ek-section ek-surface">
         <div className="ek-container">
           <Reveal className="ek-section__head">
-            <Eyebrow variant="numbered" number="02">
+            <Eyebrow>
               Our know how
             </Eyebrow>
             <h2 className="ek-h2">We handle everthing between the brief and the breakdown.</h2>
@@ -113,10 +113,10 @@ export function ServicesScreen() {
       <section className="ek-section ek-offwhite">
         <div className="ek-container">
           <Reveal className="ek-section__head">
-            <Eyebrow variant="numbered" number="03">
+            <Eyebrow>
               Why? the real return
             </Eyebrow>
-            <h2 className="ek-h2">The real return is never about cutting costs.</h2>
+            <h2 className="ek-h2">The real return is saving time.</h2>
             <p className="ek-lead">
               The saving that matters isn&apos;t just the invoice — it&apos;s the weeks your people
               spend on planning and operations.
