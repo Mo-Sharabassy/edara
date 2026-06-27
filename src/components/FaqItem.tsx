@@ -26,7 +26,7 @@ export function FaqItem({
         aria-controls={answerId}
       >
         {q}
-        <span className="material-symbols-outlined">add</span>
+        <span className="material-symbols-outlined" aria-hidden="true">add</span>
       </button>
       <div
         id={answerId}
