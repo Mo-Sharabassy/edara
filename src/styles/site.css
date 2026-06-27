@@ -24,10 +24,14 @@
   text-transform: uppercase; color: var(--outline-variant); margin: 12px 0 0; }
 
 /* ---------------------------------------------------------------- Reveal */
-.reveal { opacity: 0; transform: translateY(30px);
-  transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+/* Visible by default — content is never gated on JS.
+   The hide-before-animate state is scoped to users who have not requested
+   reduced motion, so no-JS / slow-JS / crawlers always see content. */
+.reveal { transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
 .reveal.is-in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .reveal:not(.is-in) { opacity: 0; transform: translateY(30px); }
+}
 
 /* Route fade */
 .ek-route { animation: ek-routein .45s cubic-bezier(.22,1,.36,1) both; }
