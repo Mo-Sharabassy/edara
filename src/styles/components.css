@@ -105,6 +105,15 @@
   .edara-btn:hover, .edara-btn:active { transform: none; }
 }
 
+.edara-btn--sm { padding: 8px 16px; }
+.edara-btn--md { padding: 16px 40px; }
+.edara-btn--lg { padding: 24px 64px; }
+
+@media (max-width: 600px) {
+  .edara-btn--md { padding: 16px 20px; }
+  .edara-btn--lg { padding: 20px 28px; }
+}
+
 /* ---- PricingCard ------------------------------------------------- */
 .edara-price {
   background: var(--surface); border: 1px solid var(--border-subtle);
