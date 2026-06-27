@@ -13,8 +13,9 @@ export function Footer() {
   return (
     <footer className="edara-footer">
       <div className="edara-footer__inner">
-        <Link href="/" style={{ cursor: "pointer", display: "inline-flex", textDecoration: "none" }}>
+        <Link href="/" style={{ cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 14, textDecoration: "none" }}>
           <EdaraLogo height={28} tone="muted" />
+          <span className="edara-nav__tag">EVENTS AS A SERVICE</span>
         </Link>
         <div className="edara-footer__links">
           {FOOTER_LINKS.map((l) => (

@@ -320,6 +320,7 @@
   .ek-agencycard__figure       { padding: var(--space-lg) var(--space-md); } /* 56/40 → 40 24 px */
   .ek-agencycard__body         { padding: var(--space-md); }                 /* 48 → 24 px */
   .edara-footer__inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .ek-mnav__inner .edara-nav__tag { font-size: 9px; letter-spacing: .1em; padding-left: 10px; }
 }
 
 /* ---------------------------------------------------------------- Services intro */
