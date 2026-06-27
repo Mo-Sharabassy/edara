@@ -12,11 +12,17 @@ import { EDARA_EVENTS } from "@/data/events";
 export function HomePortfolio() {
   const events = EDARA_EVENTS;
   const [selectedId, setSelectedId] = React.useState(events[0]?.id);
-  const [zoomed, setZoomed] = React.useState(false);
+  const [lightboxOpen, setLightboxOpen] = React.useState(false);
   const onSelect = React.useCallback((id: string) => {
     setSelectedId(id);
-    setZoomed(false);
   }, []);
+
+  React.useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightboxOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxOpen]);
   const selected = events.find((e) => e.id === selectedId) || events[0];
   if (!selected) return null;
 
@@ -58,15 +64,34 @@ export function HomePortfolio() {
           <div className="ek-globe-panel">
             <div className="ek-evdetail">
               <div
-                className={"ek-evdetail__media" + (zoomed ? " is-zoomed" : "")}
+                className="ek-evdetail__media"
                 style={{ backgroundImage: `url(${selected.image})`, backgroundPosition: selected.pos || "center" }}
                 role="button"
                 tabIndex={0}
-                aria-label="Magnify photo"
-                onClick={() => setZoomed((z) => !z)}
+                aria-label="Open full-screen photo"
+                onClick={() => setLightboxOpen(true)}
+                onKeyDown={(e) => e.key === "Enter" && setLightboxOpen(true)}
               >
                 <span className="ek-evdetail__cat">{selected.category}</span>
               </div>
+
+              {lightboxOpen && (
+                <div
+                  className="ek-lightbox"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label="Event photo"
+                  onClick={() => setLightboxOpen(false)}
+                >
+                  <div
+                    className="ek-lightbox__img"
+                    style={{ backgroundImage: `url(${selected.image})`, backgroundPosition: selected.pos || "center" }}
+                  />
+                  <button className="ek-lightbox__close" aria-label="Close photo" onClick={() => setLightboxOpen(false)}>
+                    <span className="material-symbols-outlined">close</span>
+                  </button>
+                </div>
+              )}
               <div className="ek-evdetail__body">
                 <p className="ek-evdetail__loc">
                   <span className="material-symbols-outlined">location_on</span>
