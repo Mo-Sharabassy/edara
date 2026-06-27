@@ -88,7 +88,7 @@ export function HomePortfolio() {
                     style={{ backgroundImage: `url(${selected.image})`, backgroundPosition: selected.pos || "center" }}
                   />
                   <button className="ek-lightbox__close" aria-label="Close photo" onClick={() => setLightboxOpen(false)}>
-                    <span className="material-symbols-outlined">close</span>
+                    <span className="material-symbols-outlined" aria-hidden="true">close</span>
                   </button>
                 </div>
               )}
