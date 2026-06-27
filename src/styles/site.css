@@ -328,6 +328,12 @@
   .ek-feature-article__img { min-height: 240px; }
   .ek-feature-article__body { padding: 32px; }
 }
+/* B5 — 4-stat grid: step to 2 × 2 on phones (kit.css collapses to 1fr at ≤900px for mid-tablets;
+   override back to 2-col below 768px so the label "Events Managed Worldwide" fits without wrapping) */
+@media (max-width: 767px) {
+  .ek-grid4 { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 600px) {
   .ek-values, .ek-team, .ek-statband, .ek-postgrid { grid-template-columns: 1fr; }
   .ek-statband__cell { border-right: none !important; border-bottom: 1px solid var(--border-subtle); }
