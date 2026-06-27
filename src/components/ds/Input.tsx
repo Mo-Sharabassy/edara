@@ -29,7 +29,7 @@ export function Input({ label, multiline = false, error, id, className = "", ...
       ) : (
         <input id={fid} className="edara-field__control" {...rest} />
       )}
-      {error && <span className="edara-field__error">{error}</span>}
+      {error && <span className="edara-field__error" role="alert" aria-atomic="true">{error}</span>}
     </div>
   );
 }
