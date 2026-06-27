@@ -333,6 +333,13 @@
   .ek-feature-article__img { min-height: 240px; }
   .ek-feature-article__body { padding: 32px; }
 }
+/* ---------------------------------------------------------------- Hero-to-globe gap (item 6) */
+/* kit.css: .ek-pf-head--hero { padding-bottom: 32px } + .ek-globe-sec--joined { padding-top: 24px }
+   = 56px gap between description and globe. Tighten to 8+8=16px so the globe reads as part of
+   the same block rather than a separate section below. */
+.ek-pf-head--hero { padding-bottom: 8px; }
+.ek-globe-sec--joined { padding-top: 8px; }
+
 /* ---------------------------------------------------------------- Hero lockup (item 5) */
 /* Calligraphy is now a sibling of the h2 inside .ek-hero-text.
    space-between keeps h2 on the left and calligraphy on the right at desktop widths,
