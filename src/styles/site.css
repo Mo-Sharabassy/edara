@@ -365,6 +365,11 @@
   .ek-mnav__inner .edara-nav__tag { font-size: 9px; letter-spacing: .1em; padding-left: 10px; }
   /* B10: pricing hero top padding is 96px desktop; reduce on mobile so content starts sooner */
   .ek-prhero { padding: 56px 0 40px; }
+
+  /* Item 3: logos trust band — uniform 2-col grid with odd logo centred */
+  .ek-trust__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; justify-items: center; }
+  .ek-trust__logo { font-size: 18px; }
+  .ek-trust__logo:last-child { grid-column: 1 / -1; }
 }
 
 /* ---------------------------------------------------------------- Services intro */
