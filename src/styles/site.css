@@ -337,9 +337,18 @@
 @media (max-width: 767px) {
   /* B5: 4-stat grid steps to 2×2; kit.css collapses to 1fr at ≤900px for mid-tablets */
   .ek-grid4 { grid-template-columns: 1fr 1fr; }
+  /* Prevent grid cells from exceeding their track width (default min-width:auto can overflow) */
+  .ek-grid4 > * { min-width: 0; }
   /* B9: calligraphy SVG text reduced one step earlier so it doesn't dominate the hero
      in the 600–767px range (kit.css already does 90px at ≤600px; this just pulls it up) */
   .ek-calligraphy-text { font-size: 90px; }
+}
+
+/* Item 4: stat tile compact sizing — at <=480px the 2×2 cells are only ~144px wide;
+   the 40px padding and 56px number both need to step down so nothing clips. */
+@media (max-width: 480px) {
+  .ek-stat-cell { padding: 20px !important; min-height: 120px !important; }
+  .ek-stat-cell h3 { font-size: 36px !important; line-height: 44px !important; }
 }
 
 @media (max-width: 600px) {

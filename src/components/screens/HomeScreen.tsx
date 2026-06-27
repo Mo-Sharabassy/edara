@@ -37,11 +37,11 @@ export function HomeScreen() {
       {/* 3 · Numbers */}
       <section className="ek-section">
         <div className="ek-container">
-          <Reveal className="ek-grid4">
-            <StatTile value={50} suffix="+" label="Events Managed Worldwide" variant="bordered" />
-            <StatTile value={20} suffix="+" label="Countries Delivered In" variant="bordered" />
-            <StatTile value={0} suffix="%" label="Logistics Failure Rate" variant="bordered" />
-            <StatTile value={5} prefix="$" suffix="M+" label="Value Managed" variant="bordered" />
+          <Reveal className="ek-grid4 ek-stats-grid">
+            <StatTile value={50} suffix="+" label="Events Managed Worldwide" variant="bordered" className="ek-stat-cell" />
+            <StatTile value={20} suffix="+" label="Countries Delivered In" variant="bordered" className="ek-stat-cell" />
+            <StatTile value={0} suffix="%" label="Logistics Failure Rate" variant="bordered" className="ek-stat-cell" />
+            <StatTile value={5} prefix="$" suffix="M+" label="Value Managed" variant="bordered" className="ek-stat-cell" />
           </Reveal>
         </div>
       </section>
