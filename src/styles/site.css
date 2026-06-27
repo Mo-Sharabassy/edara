@@ -328,10 +328,13 @@
   .ek-feature-article__img { min-height: 240px; }
   .ek-feature-article__body { padding: 32px; }
 }
-/* B5 — 4-stat grid: step to 2 × 2 on phones (kit.css collapses to 1fr at ≤900px for mid-tablets;
-   override back to 2-col below 768px so the label "Events Managed Worldwide" fits without wrapping) */
+/* B5/B9 — phone-range overrides (767px = mobile nav threshold) */
 @media (max-width: 767px) {
+  /* B5: 4-stat grid steps to 2×2; kit.css collapses to 1fr at ≤900px for mid-tablets */
   .ek-grid4 { grid-template-columns: 1fr 1fr; }
+  /* B9: calligraphy SVG text reduced one step earlier so it doesn't dominate the hero
+     in the 600–767px range (kit.css already does 90px at ≤600px; this just pulls it up) */
+  .ek-calligraphy-text { font-size: 90px; }
 }
 
 @media (max-width: 600px) {
