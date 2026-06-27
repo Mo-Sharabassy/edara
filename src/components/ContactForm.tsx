@@ -66,8 +66,8 @@ export function ContactForm({
 
   if (sent) {
     return (
-      <div className="ek-form__success">
-        <span className="material-symbols-outlined">mark_email_read</span>
+      <div className="ek-form__success" role="status" aria-live="polite" aria-atomic="true">
+        <span className="material-symbols-outlined" aria-hidden="true">mark_email_read</span>
         <h3 className="ek-form__success-t">Inquiry received.</h3>
         <p className="ek-form__success-s">
           Thanks{vals.name ? `, ${vals.name.split(" ")[0]}` : ""}. One of our event architects will

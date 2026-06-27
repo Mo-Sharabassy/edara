@@ -56,9 +56,10 @@ export function MobileNav() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            style={{ cursor: "pointer", display: "inline-flex" }}
+            style={{ cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 10, textDecoration: "none" }}
           >
             <EdaraLogo height={26} />
+            <span className="edara-nav__tag">EVENTS AS A SERVICE</span>
           </Link>
           <button className="ek-burger is-open" onClick={() => setOpen(false)} aria-label="Close menu">
             <span />
@@ -72,8 +73,9 @@ export function MobileNav() {
             return (
               <a
                 key={l.href}
+                href={l.href}
                 className={"ek-drawer__link" + (active ? " ek-drawer__link--active" : "")}
-                onClick={() => nav(l.href)}
+                onClick={(e) => { e.preventDefault(); nav(l.href); }}
               >
                 {l.label}
                 <span className="material-symbols-outlined">arrow_outward</span>

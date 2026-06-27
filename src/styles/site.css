@@ -7,9 +7,10 @@
 .edara-footer__link { text-decoration: none !important; transition: color .2s ease, text-shadow .2s ease; }
 .edara-footer__link:hover { color: var(--on-surface-variant) !important; text-decoration-color: transparent !important;
   text-shadow: 0.35px 0 0 currentColor, -0.35px 0 0 currentColor; }
-.ek-linkh2 { display: inline-flex; align-items: center; gap: 12px; transition: gap .25s ease, opacity .2s ease; }
-.ek-linkh2:hover { gap: 18px; opacity: .85; }
-.ek-linkh2__arrow { font-size: .8em; }
+.ek-linkh2 { display: inline-flex; align-items: center; gap: 12px; transition: opacity .2s ease; }
+.ek-linkh2:hover { opacity: .85; }
+.ek-linkh2__arrow { font-size: .8em; transition: transform .25s ease; }
+.ek-linkh2:hover .ek-linkh2__arrow { transform: translateX(6px); }
 .ek-hero__meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 6px;
   font-family: var(--font-mono); font-size: 12px; letter-spacing: .07em; text-transform: uppercase;
   color: var(--on-surface-variant); }
@@ -24,10 +25,14 @@
   text-transform: uppercase; color: var(--outline-variant); margin: 12px 0 0; }
 
 /* ---------------------------------------------------------------- Reveal */
-.reveal { opacity: 0; transform: translateY(30px);
-  transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+/* Visible by default — content is never gated on JS.
+   The hide-before-animate state is scoped to users who have not requested
+   reduced motion, so no-JS / slow-JS / crawlers always see content. */
+.reveal { transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
 .reveal.is-in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1 !important; transform: none !important; transition: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .reveal:not(.is-in) { opacity: 0; transform: translateY(30px); }
+}
 
 /* Route fade */
 .ek-route { animation: ek-routein .45s cubic-bezier(.22,1,.36,1) both; }
@@ -41,7 +46,7 @@
   border-bottom: 1px solid var(--border-subtle); }
 .ek-mnav__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; padding: 0 20px; }
 .ek-burger { display: inline-flex; flex-direction: column; gap: 5px; background: none; border: none;
-  cursor: pointer; padding: 10px; margin-right: -10px; border-radius: 8px; }
+  cursor: pointer; padding: 10px 12px; margin-right: -12px; border-radius: 8px; }
 .ek-burger span { width: 22px; height: 2px; background: var(--on-surface); border-radius: 2px;
   transition: transform .3s ease, opacity .2s ease; }
 .ek-burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -156,6 +161,33 @@
 /* Pricing card chosen state */
 .edara-price.is-chosen { border-color: var(--primary) !important; box-shadow: 0 0 0 2px var(--primary), var(--shadow-card-hover) !important; }
 
+/* ---------------------------------------------------------------- Event image lightbox */
+.ek-lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(1, 17, 43, 0.92);
+  display: flex; align-items: center; justify-content: center;
+  cursor: zoom-out; padding: 24px;
+  animation: ek-lightbox-in .18s ease;
+}
+.ek-lightbox__img {
+  width: 100%; max-width: 1100px; aspect-ratio: 16/9;
+  background-size: cover; background-repeat: no-repeat; background-position: center;
+  border-radius: 8px; box-shadow: 0 32px 80px rgba(0,0,0,.6);
+  pointer-events: none;
+}
+.ek-lightbox__close {
+  position: absolute; top: 20px; right: 20px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px; width: 40px; height: 40px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff; cursor: pointer;
+  transition: background .15s ease;
+}
+.ek-lightbox__close:hover { background: rgba(255,255,255,.22); }
+.ek-lightbox__close .material-symbols-outlined { font-size: 20px; }
+@keyframes ek-lightbox-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ek-lightbox { animation: none; } }
+
 /* ---------------------------------------------------------------- Contact form states */
 .ek-form__success { text-align: center; padding: 24px 8px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .ek-form__success .material-symbols-outlined { font-size: 56px; color: var(--primary);
@@ -167,7 +199,7 @@
 /* ---------------------------------------------------------------- Contact page */
 .ek-contactpage { background: var(--surface-page); }
 .ek-contactsplit { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
-.ek-contactaside { position: sticky; top: 112px; display: flex; flex-direction: column; gap: 28px; }
+.ek-contactaside { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 28px; }
 .ek-contactaside__lead { font-family: var(--font-body); font-size: 18px; line-height: 28px; color: var(--on-surface-variant); margin: 0; }
 .ek-infolist { display: flex; flex-direction: column; gap: 4px; }
 .ek-inforow { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-top: 1px solid var(--border-subtle); }
@@ -192,7 +224,7 @@
   font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--on-surface); }
 .ek-faqq .material-symbols-outlined { color: var(--primary); transition: transform .3s ease; flex: none; }
 .ek-faqq.is-open .material-symbols-outlined { transform: rotate(45deg); }
-.ek-faqa { overflow: hidden; max-height: 0; transition: max-height .35s ease; }
+.ek-faqa { overflow: hidden; max-height: 0; transition: max-height .35s ease; } /* impeccable-disable-line layout-transition -- JS-controlled accordion reads scrollHeight; grid-template-rows migration deferred to Phase 2 */
 .ek-faqa__inner { font-family: var(--font-body); font-size: 16px; line-height: 26px; color: var(--on-surface-variant);
   padding: 0 0 22px; max-width: 620px; }
 
@@ -285,7 +317,7 @@
   background-size: cover; background-position: center; margin: 32px 0 40px; }
 .ek-article__body p { font-family: var(--font-body); font-size: 18px; line-height: 30px; color: var(--on-surface); margin: 0 0 24px; }
 .ek-article__body h3 { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: var(--on-surface); margin: 40px 0 16px; }
-.ek-article__body blockquote { margin: 32px 0; padding: 4px 0 4px 28px; border-left: 3px solid var(--primary);
+.ek-article__body blockquote { margin: 32px 0; padding: 4px 0 4px 28px; border-left: 3px solid var(--primary); /* impeccable-disable-line side-tab -- blockquote left-border is conventional typographic styling, not an accent stripe */
   font-family: var(--font-display); font-size: 24px; line-height: 1.4; font-weight: 600; font-style: italic; color: var(--on-surface); }
 
 /* ---------------------------------------------------------------- Responsive */
@@ -301,6 +333,15 @@
   .ek-feature-article__img { min-height: 240px; }
   .ek-feature-article__body { padding: 32px; }
 }
+/* B5/B9 — phone-range overrides (767px = mobile nav threshold) */
+@media (max-width: 767px) {
+  /* B5: 4-stat grid steps to 2×2; kit.css collapses to 1fr at ≤900px for mid-tablets */
+  .ek-grid4 { grid-template-columns: 1fr 1fr; }
+  /* B9: calligraphy SVG text reduced one step earlier so it doesn't dominate the hero
+     in the 600–767px range (kit.css already does 90px at ≤600px; this just pulls it up) */
+  .ek-calligraphy-text { font-size: 90px; }
+}
+
 @media (max-width: 600px) {
   .ek-values, .ek-team, .ek-statband, .ek-postgrid { grid-template-columns: 1fr; }
   .ek-statband__cell { border-right: none !important; border-bottom: 1px solid var(--border-subtle); }
@@ -322,6 +363,8 @@
   .ek-agencycard__body         { padding: var(--space-md); }                 /* 48 → 24 px */
   .edara-footer__inner { flex-direction: column; align-items: flex-start; gap: 24px; }
   .ek-mnav__inner .edara-nav__tag { font-size: 9px; letter-spacing: .1em; padding-left: 10px; }
+  /* B10: pricing hero top padding is 96px desktop; reduce on mobile so content starts sooner */
+  .ek-prhero { padding: 56px 0 40px; }
 }
 
 /* ---------------------------------------------------------------- Services intro */

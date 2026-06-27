@@ -320,43 +320,6 @@ export function PricingScreen() {
         </div>
       </section>
 
-      {/* Which of the two models fits */}
-      <section className="ek-section ek-sunken">
-        <div className="ek-container" style={{ maxWidth: 1000 }}>
-          <Reveal
-            className="ek-section__head"
-            style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}
-          >
-            <h2 className="ek-h2">Which partnership fits you?</h2>
-          </Reveal>
-          <Reveal className="ek-tablewrap">
-            <table className="ek-table">
-              <thead>
-                <tr>
-                  <th className="ek-table__h">Consideration</th>
-                  <th className="ek-table__h ek-table__h--brand">Department</th>
-                  <th className="ek-table__h ek-table__h--muted">Agency (10%)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Cost structure", "Flat fee, billed quarterly", "10% of managed spend"],
-                  ["Best for", "Predictable, recurring calendar", "Variable, big-budget events"],
-                  ["Budget visibility", "Locked for the quarter", "Scales with each event"],
-                  ["Commitment", "Quarterly partnership", "Per engagement"],
-                ].map((r) => (
-                  <tr key={r[0]}>
-                    <td className="ek-table__row-h">{r[0]}</td>
-                    <td className="ek-table__cell ek-table__cell--brand">{r[1]}</td>
-                    <td className="ek-table__cell">{r[2]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="ek-ambient">
         <div className="ek-container ek-ambient__inner">
           <div>
