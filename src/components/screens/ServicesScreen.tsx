@@ -74,7 +74,7 @@ export function ServicesScreen() {
         <div className="ek-container">
           <Reveal className="ek-section__head">
             <Eyebrow>
-              Our know how
+              Our know-how
             </Eyebrow>
             <h2 className="ek-h2">We handle everything between the brief and the breakdown.</h2>
           </Reveal>
@@ -114,7 +114,7 @@ export function ServicesScreen() {
         <div className="ek-container">
           <Reveal className="ek-section__head">
             <Eyebrow>
-              Why? the real return
+              Why the real return
             </Eyebrow>
             <h2 className="ek-h2">The real return is saving time.</h2>
             <p className="ek-lead">
