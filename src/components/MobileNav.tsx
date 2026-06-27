@@ -73,8 +73,9 @@ export function MobileNav() {
             return (
               <a
                 key={l.href}
+                href={l.href}
                 className={"ek-drawer__link" + (active ? " ek-drawer__link--active" : "")}
-                onClick={() => nav(l.href)}
+                onClick={(e) => { e.preventDefault(); nav(l.href); }}
               >
                 {l.label}
                 <span className="material-symbols-outlined">arrow_outward</span>
