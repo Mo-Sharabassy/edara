@@ -146,6 +146,7 @@
 .ek-selectbar__txt { display: flex; align-items: center; gap: 14px; }
 .ek-selectbar__check { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
   border-radius: 999px; background: rgba(66,133,244,.2); color: var(--primary-fixed); }
+.ek-selectbar__check.material-symbols-outlined { display: inline-flex; align-items: center; justify-content: center; }
 .ek-selectbar__t { font-family: var(--font-display); font-size: 18px; font-weight: 600; margin: 0; }
 .ek-selectbar__s { font-family: var(--font-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
   color: var(--outline-variant); margin: 2px 0 0; }
