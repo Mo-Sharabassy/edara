@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 // "Edara Contact <contact@edaraevents.com>" (or whichever address you configure).
 // The onboarding@resend.dev sender works immediately for testing but delivers
 // from Resend's shared domain, not yours.
-const FROM = "Edara Contact <onboarding@resend.dev>";
+const FROM = "Edara Contact <contact@edaraevents.com>";
 const TO = "edaraevents@gmail.com";
 
 function isValidEmail(s: string) {
