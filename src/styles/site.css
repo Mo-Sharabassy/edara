@@ -363,11 +363,19 @@
   .ek-calligraphy-text { font-size: 90px; }
 }
 
+/* L1 — .ek-hero-text min-width:300px exceeds the 288px content width at 320px viewport;
+   clearing it lets flex shrink fully so no layout overflow at the narrowest phones. */
+@media (max-width: 340px) {
+  .ek-hero-text { min-width: 0; }
+}
+
 /* Item 4: stat tile compact sizing — at <=480px the 2×2 cells are only ~144px wide;
    the 40px padding and 56px number both need to step down so nothing clips. */
 @media (max-width: 480px) {
   .ek-stat-cell { padding: 20px !important; min-height: 120px !important; }
   .ek-stat-cell h3 { font-size: 36px !important; line-height: 44px !important; }
+  /* L2 — BentoCard 40px padding leaves only 208px of content at 320px; step down to 24px */
+  .edara-card { padding: 24px; }
 }
 
 @media (max-width: 600px) {
