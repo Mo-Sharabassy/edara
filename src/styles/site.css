@@ -504,4 +504,10 @@
   .ek-askbar__label { display: none; }
   .ek-ask__msg { max-width: 94%; }
   .ek-ask__disclaim { display: none; }
+
+  /* A2 — iOS hides scrollbars; fade hint signals the list scrolls */
+  .ek-evlist {
+    mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
+  }
 }
