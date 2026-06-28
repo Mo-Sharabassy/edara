@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-28T00:00:00.000Z",
+  "title": "Design System: Edara",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Signal Blue",
+        "canonical": "oklch(40% 0.17 264)",
+        "tonalRamp": ["#00205c", "#003a8a", "#005bbf", "#1a73e8", "#4285f4", "#669df6", "#adc7ff", "#d8e2ff"]
+      },
+      "primary-bright": {
+        "role": "primary",
+        "displayName": "Brand Blue Bright",
+        "canonical": "oklch(52% 0.19 265)",
+        "tonalRamp": ["#00205c", "#003a8a", "#005bbf", "#1a73e8", "#4285f4", "#669df6", "#adc7ff", "#d8e2ff"]
+      },
+      "primary-light": {
+        "role": "primary",
+        "displayName": "Brand Blue Light",
+        "canonical": "oklch(88% 0.06 264)",
+        "tonalRamp": ["#00205c", "#003a8a", "#005bbf", "#1a73e8", "#4285f4", "#669df6", "#adc7ff", "#d8e2ff"]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Off-White Canvas",
+        "canonical": "oklch(98% 0.004 60)",
+        "tonalRamp": ["#ccc8c6", "#d8d4d2", "#e4e2e1", "#eae8e7", "#f0eded", "#f5f3f3", "#f8f9fa", "#fbf9f8"]
+      },
+      "hero-dark": {
+        "role": "neutral",
+        "displayName": "Near-Black Hero",
+        "canonical": "oklch(10% 0 0)",
+        "tonalRamp": ["#0a0a0a", "#141414", "#1b1c1c", "#242424", "#2e2e2e", "#383838", "#424242", "#4c4c4c"]
+      },
+      "dark-section": {
+        "role": "neutral",
+        "displayName": "Dark Section",
+        "canonical": "oklch(16% 0.003 250)",
+        "tonalRamp": ["#0a0a0a", "#141414", "#1b1c1c", "#242424", "#2e2e2e", "#383838", "#424242", "#4c4c4c"]
+      },
+      "ink-primary": {
+        "role": "neutral",
+        "displayName": "Ink Primary",
+        "canonical": "oklch(16% 0.003 250)",
+        "tonalRamp": ["#0a0a0a", "#141414", "#1b1c1c", "#303030", "#414754", "#5e5e64", "#727785", "#dadce0"]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "oklch(35% 0.02 258)",
+        "tonalRamp": ["#0a0a0a", "#141414", "#1b1c1c", "#303030", "#414754", "#5e5e64", "#727785", "#dadce0"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "oklch(44% 0.012 280)",
+        "tonalRamp": ["#0a0a0a", "#141414", "#1b1c1c", "#303030", "#414754", "#5e5e64", "#727785", "#dadce0"]
+      },
+      "border-subtle": {
+        "role": "neutral",
+        "displayName": "Border Subtle",
+        "canonical": "oklch(88% 0.012 260)",
+        "tonalRamp": ["#414754", "#5e5e64", "#727785", "#a5a9b4", "#c1c6d6", "#dadce0", "#eae8e7", "#f5f3f3"]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error Red",
+        "canonical": "oklch(38% 0.19 27)",
+        "tonalRamp": ["#5c0000", "#93000a", "#ba1a1a", "#cf3030", "#e05454", "#f28080", "#ffdad6", "#fff0ee"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines, pricing amounts, section-leading statements. Max one per viewport." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings, testimonial quotes, CTA band title." },
+      "title": { "displayName": "Title", "purpose": "Card titles, sub-section headings, bento titles." },
+      "body": { "displayName": "Body", "purpose": "Standard body text, card descriptions. Max 65ch." },
+      "body-lg": { "displayName": "Body Large", "purpose": "Lead paragraphs, hero sub-copy, section introductions. Max 65ch." },
+      "label": { "displayName": "Label / Mono", "purpose": "Section kickers, field labels, bento items, trust-bar labels. JetBrains Mono, uppercase, tracked." }
+    },
+    "shadows": [
+      { "name": "ambient-card", "value": "0 1px 3px rgba(0,0,0,0.08)", "purpose": "Cards at rest. Nearly invisible separator from page ground." },
+      { "name": "hover-lift", "value": "0 20px 25px -5px rgba(0,0,0,0.10), 0 10px 10px -5px rgba(0,0,0,0.04)", "purpose": "Cards and bento items on hover. Decisive lift." },
+      { "name": "featured-glow", "value": "0 25px 50px -12px rgba(0,91,191,0.30)", "purpose": "Pricing featured card hover only. Brand blue bleeds into elevation." },
+      { "name": "input-focus-inset", "value": "inset 0 2px 4px rgba(0,0,0,0.05)", "purpose": "Combined with focus ring on inputs." }
+    ],
+    "motion": [
+      { "name": "ease-reveal", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Entrance animations. Exponential ease-out." },
+      { "name": "ease-tactile", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default state transitions. Material standard curve." },
+      { "name": "dur-fast", "value": "0.2s", "purpose": "Button hover, border shifts, opacity micro-interactions." },
+      { "name": "dur-standard", "value": "0.3s", "purpose": "Card hover, icon transforms." },
+      { "name": "dur-reveal", "value": "0.8s", "purpose": "Section entrance animations." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "600px", "purpose": "Max-width override for mobile layout adjustments." },
+      { "name": "tablet", "value": "768px", "purpose": "Desktop-first breakpoint for desktop-only rules (min-width)." },
+      { "name": "desktop", "value": "1024px", "purpose": "Full desktop layout." },
+      { "name": "wide", "value": "1440px", "purpose": "Container max-width cap." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Signal Blue fill, white text, 4px radius. Used for every conversion-intent action.",
+      "html": "<button class=\"ds-btn-primary\">Book a Strategy Call</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #005bbf; color: #fff; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 20px; padding: 16px 40px; border-radius: 4px; border: 1px solid transparent; cursor: pointer; text-decoration: none; white-space: nowrap; transition: transform 0.2s cubic-bezier(0.4,0,0.2,1), filter 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { filter: brightness(1.08); transform: translateY(-2px); } .ds-btn-primary:active { transform: translateY(1px) scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #005bbf; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action. Transparent fill, ink-primary text, outline border.",
+      "html": "<button class=\"ds-btn-outline\">Learn More</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #1b1c1c; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 20px; padding: 16px 40px; border-radius: 4px; border: 1px solid #727785; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.2s ease, transform 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-outline:hover { background: #f0eded; transform: translateY(-2px); } .ds-btn-outline:focus-visible { outline: 2px solid #005bbf; outline-offset: 2px; }"
+    },
+    {
+      "name": "Glass Button",
+      "kind": "button",
+      "refersTo": "button-glass",
+      "description": "On-dark-background secondary CTA. White 10% fill + backdrop blur.",
+      "html": "<div style=\"background:#0a0a0a;padding:32px;\"><button class=\"ds-btn-glass\">View Portfolio</button></div>",
+      "css": ".ds-btn-glass { display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.10); color: #fff; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; line-height: 20px; padding: 16px 40px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.20); cursor: pointer; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); text-decoration: none; white-space: nowrap; transition: background 0.2s ease, transform 0.2s cubic-bezier(0.4,0,0.2,1); } .ds-btn-glass:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); } .ds-btn-glass:focus-visible { outline: 2px solid rgba(255,255,255,0.6); outline-offset: 2px; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard content card. 8px radius, 40px padding, subtle border. Interactive variant lifts on hover.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card__title\">Exhibition Design</h3><p class=\"ds-card__body\">Custom booth design and build, from concept to teardown — you hand us the brief, we handle everything else.</p></div>",
+      "css": ".ds-card { background: #fbf9f8; border: 1px solid #dadce0; border-radius: 8px; padding: 40px; } .ds-card__title { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 24px; line-height: 32px; font-weight: 600; color: #1b1c1c; margin: 0 0 8px; } .ds-card__body { font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 24px; color: #414754; margin: 0; } .ds-card:hover { transform: translateY(-8px) scale(1.02); border-color: #005bbf; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.10), 0 10px 10px -5px rgba(0,0,0,0.04); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1), border-color 0.4s ease; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form input. Mono uppercase label above, 4px radius, primary blue focus ring.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field__label\" for=\"ds-input-demo\">Your Name</label><input class=\"ds-field__control\" id=\"ds-input-demo\" type=\"text\" placeholder=\"John Doe\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 8px; } .ds-field__label { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #1b1c1c; } .ds-field__control { width: 100%; box-sizing: border-box; background: #fbf9f8; border: 1px solid #dadce0; border-radius: 4px; padding: 12px 16px; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 24px; color: #1b1c1c; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-field__control::placeholder { color: #5e5e64; } .ds-field__control:focus { border-color: #005bbf; box-shadow: 0 0 0 2px #005bbf, inset 0 2px 4px rgba(0,0,0,0.05); }"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky top navigation. 80px height, border-bottom, Signal Blue on active link.",
+      "html": "<nav class=\"ds-nav\"><div class=\"ds-nav__inner\"><span class=\"ds-nav__brand\">Edara <span class=\"ds-nav__tag\">EVENTS AS A SERVICE</span></span><div class=\"ds-nav__links\"><a class=\"ds-nav__link ds-nav__link--active\" href=\"#\">Home</a><a class=\"ds-nav__link\" href=\"#\">Services</a><a class=\"ds-nav__link\" href=\"#\">Pricing</a><button class=\"ds-btn-primary\" style=\"font-size:14px;padding:12px 24px;\">Book a Call</button></div></div></nav>",
+      "css": ".ds-nav { width: 100%; border-bottom: 1px solid #dadce0; background: #fbf9f8; position: sticky; top: 0; z-index: 50; } .ds-nav__inner { display: flex; justify-content: space-between; align-items: center; height: 80px; padding: 0 24px; max-width: 1440px; margin: 0 auto; } .ds-nav__brand { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; color: #1b1c1c; } .ds-nav__tag { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5e5e64; margin-left: 12px; } .ds-nav__links { display: flex; align-items: center; gap: 40px; } .ds-nav__link { font-family: Inter, system-ui, sans-serif; font-size: 16px; color: #414754; text-decoration: none; padding: 4px 0; transition: color 0.2s ease; } .ds-nav__link:hover { color: #005bbf; } .ds-nav__link--active { color: #005bbf; font-weight: 700; }"
+    },
+    {
+      "name": "CTA Band",
+      "kind": "custom",
+      "refersTo": "cta-band",
+      "description": "Full-bleed Signal Blue call-to-action section. The brand's only drenched surface. Skew accent on hover.",
+      "html": "<section class=\"ds-cta\"><div class=\"ds-cta__skew\"></div><div class=\"ds-cta__copy\"><h2 class=\"ds-cta__title\">Your next event starts with one brief.</h2><p class=\"ds-cta__sub\">One point of contact. One team. Fully managed.</p></div><button class=\"ds-btn-primary\" style=\"background:#fff;color:#005bbf;\">Book a Strategy Call</button></section>",
+      "css": ".ds-cta { position: relative; overflow: hidden; background: #005bbf; border-radius: 16px; padding: 64px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; } .ds-cta__skew { position: absolute; top: 0; right: 0; height: 100%; width: 50%; background: rgba(255,255,255,0.06); transform: skewX(-12deg) translateX(80px); transition: transform 1s ease; pointer-events: none; } .ds-cta:hover .ds-cta__skew { transform: skewX(-12deg) translateX(40px); } .ds-cta__copy { position: relative; z-index: 1; max-width: 640px; } .ds-cta__title { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 32px; line-height: 40px; font-weight: 700; color: #fff; margin: 0 0 8px; } .ds-cta__sub { font-family: Inter, system-ui, sans-serif; font-size: 18px; color: #d8e2ff; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Briefed Operator",
+    "overview": "Edara's design system is the visual vocabulary of a team that has run high-stakes events for two hundred companies and doesn't need to prove it. The system carries quiet operational confidence — not luxury, not startup-flashy — the energy of a senior department you didn't have to hire. Every layout decision, spacing choice, and typographic call is a demonstration of the core claim: we have done this before, we will do it again, you don't need to think about it.\n\nThe palette is a single saturated blue deployed with restraint against a near-neutral off-white and a stark near-black. Nothing competes. The typeface pairing — Hanken Grotesk headings, Inter body, JetBrains Mono operational labels — builds a three-tier hierarchy that reads as precision instrument, not design portfolio.\n\nThe system explicitly rejects: AI-generated-looking layouts (generic structure, disconnected sections, no visual through-line); SaaS metric-grid heroes; 01/02/03 scaffolding; corporate event company clutter (logo soup, low hierarchy, dated); decorative complexity that doesn't communicate anything.",
+    "keyCharacteristics": [
+      "Single brand accent (#005bbf), deployed sparingly — its rarity is the authority",
+      "Two-world palette: near-black hero zones (#0a0a0a, #1b1c1c) versus warm off-white content zones (#fbf9f8)",
+      "Three-font stack with strict role segregation (display / body / mono-label)",
+      "Flat-by-default elevation with earned hover lift",
+      "Near-zero border radius on default elements; components use 4–8px max"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Signal Blue (#005bbf) is the only saturated accent. It never appears as a surface fill except on the primary button and the CTA band. Its scarcity earns its authority.", "section": "colors" },
+      { "name": "The Two Worlds Rule", "body": "Every section is either a Near-Black Hero zone (#0a0a0a, #1b1c1c) or an Off-White Content zone (#fbf9f8). Mixed-temperature sections are prohibited. The alternation is the rhythm.", "section": "colors" },
+      { "name": "The Mono Label Rule", "body": "JetBrains Mono is reserved for operational metadata: labels, specs, counters, kickers used as deliberate brand system. It never appears in running prose.", "section": "typography" },
+      { "name": "The Single Kicker Rule", "body": "The mono-label eyebrow is a deliberate brand system, not section scaffolding. Maximum one per page section. If every section has one, it has become AI grammar.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. The only resting shadow is 0 1px 3px rgba(0,0,0,0.08) on cards. Any shadow larger than this at rest is excessive decoration.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Signal Blue (#005bbf) only for interactive elements, active states, and the CTA band surface.",
+      "Do alternate between Near-Black zones and Off-White zones to create page rhythm. The contrast is the layout.",
+      "Do use JetBrains Mono exclusively for labels, specs, counters, and mono kickers. Never in prose.",
+      "Do keep body text at ≤65ch line length.",
+      "Do apply prefers-reduced-motion fallbacks to every transition and animation.",
+      "Do verify 4.5:1 contrast for all body text, including placeholder text.",
+      "Do keep border radius at or below 8px for components."
+    ],
+    "donts": [
+      "Don't build AI-generated-looking layouts: generic structure, disconnected sections, no visual through-line.",
+      "Don't use the SaaS metric-grid hero pattern (big number + small label + supporting stats + gradient accent). Prohibited.",
+      "Don't use 01 / 02 / 03 section scaffolding. Prohibited.",
+      "Don't create corporate event company clutter: logo soup, low hierarchy, dated visual language.",
+      "Don't introduce decorative complexity with no substance — heavy animation that doesn't communicate anything.",
+      "Don't build desktop-first decisions that collapse on mobile. One voice, every viewport.",
+      "Don't add a second saturated accent color. The system uses exactly one.",
+      "Don't use border-left or border-right greater than 1px as a colored stripe on cards, list items, or callouts.",
+      "Don't use gradient text (background-clip: text).",
+      "Don't add rounded corners above 16px anywhere in the system.",
+      "Don't place the mono uppercase eyebrow above every section heading."
+    ]
+  }
+}
