@@ -67,6 +67,8 @@ export function StatTile({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
+    alignItems: "center",
+    textAlign: "center",
     padding: "40px",
     borderRadius: "var(--radius-lg)",
     minHeight: "160px",
