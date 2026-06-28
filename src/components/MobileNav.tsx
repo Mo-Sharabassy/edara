@@ -51,7 +51,7 @@ export function MobileNav() {
           </button>
         </div>
       </div>
-      <div className={"ek-drawer" + (open ? " is-open" : "")} aria-hidden={!open}>
+      <div className={"ek-drawer" + (open ? " is-open" : "")} aria-hidden={!open} {...(!open ? { inert: "" } : {})}>
         <div className="ek-drawer__top">
           <Link
             href="/"
