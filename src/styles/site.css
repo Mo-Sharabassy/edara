@@ -340,6 +340,15 @@
 .ek-pf-head--hero { padding-bottom: 8px; }
 .ek-globe-sec--joined { padding-top: 8px; }
 
+/* ---------------------------------------------------------------- D1 — Globe section bottom padding */
+/* kit.css sets .ek-globe-sec { padding: 112px 0 }. After the top was tightened to 8px via the
+   --joined override, 112px at the bottom is disproportionate. 80px restores balance without
+   losing the dark-block exit breath. Scoped to ≥768px so the ≤600px mobile override (64px from
+   kit.css ≤600px block) is completely unaffected. */
+@media (min-width: 768px) {
+  .ek-globe-sec { padding-bottom: 80px; }
+}
+
 /* ---------------------------------------------------------------- Hero lockup (item 5) */
 /* Calligraphy is now a sibling of the h2 inside .ek-hero-text.
    space-between keeps h2 on the left and calligraphy on the right at desktop widths,
