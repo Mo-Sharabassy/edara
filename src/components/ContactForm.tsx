@@ -42,6 +42,8 @@ export function ContactForm({
   const [errs, setErrs] = React.useState<Errors>({});
   const [touched, setTouched] = React.useState<Partial<Record<keyof Values, boolean>>>({});
   const [sent, setSent] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     if (defaultMessage) setVals((v) => ({ ...v, message: defaultMessage }));
@@ -56,12 +58,37 @@ export function ContactForm({
     setTouched((t) => ({ ...t, [k]: true }));
     setErrs(validateContact(vals));
   }
-  function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
     const er = validateContact(vals);
     setErrs(er);
     setTouched({ name: true, email: true, message: true });
-    if (Object.keys(er).length === 0) setSent(true);
+    if (Object.keys(er).length > 0) return;
+
+    setSending(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(vals),
+      });
+      if (res.ok) {
+        setSent(true);
+      } else {
+        const data = await res.json().catch(() => ({}));
+        setSubmitError(
+          (data as { error?: string }).error ??
+            "Something went wrong sending your message. Please email us directly at edaraevents@gmail.com."
+        );
+      }
+    } catch {
+      setSubmitError(
+        "Something went wrong sending your message. Please email us directly at edaraevents@gmail.com."
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   if (sent) {
@@ -126,9 +153,12 @@ export function ContactForm({
           onBlur={() => blur("message")}
           error={touched.message ? errs.message : undefined}
         />
-        <Button variant="primary" block>
-          Send
+        <Button variant="primary" block disabled={sending}>
+          {sending ? "Sending…" : "Send"}
         </Button>
+        {submitError ? (
+          <p className="ek-form__error" role="alert">{submitError}</p>
+        ) : null}
         {note ? <p className="ek-form__note">{note}</p> : null}
       </form>
     </>
