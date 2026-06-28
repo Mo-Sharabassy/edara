@@ -345,18 +345,11 @@
    space-between keeps h2 on the left and calligraphy on the right at desktop widths,
    matching the previous side-by-side look. flex-wrap lets them stack on narrow viewports. */
 .ek-hero-lockup { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-/* Mobile: Arabic stays on the same row as the headline as a compact right-hand accent.
-   Desktop (≥768px) is unaffected — these rules are scoped to ≤767px only. */
+/* Mobile: hide the Arabic wordmark — doesn't compose at narrow widths.
+   With only the h2 present the lockup's flex-wrap:wrap collapses gracefully;
+   no reserved space, no gap artefact. Desktop (≥768px) unchanged. */
 @media (max-width: 767px) {
-  /* No wrapping; top-align so the calligraphy registers beside the headline's first line */
-  .ek-hero-lockup { flex-wrap: nowrap; align-items: flex-start; gap: 12px; }
-  /* h2 expands into remaining space and can word-wrap internally at any width */
-  .ek-hero-lockup > .ek-display { flex: 1 1 0; min-width: 0; }
-  /* Fixed 100px accent column — overrides kit.css flex:0 1 460px and min-width:280px */
-  .ek-hero-lockup .ek-hero-calligraphy { flex: 0 0 100px; width: 100px; min-width: 0; }
-  /* 150 SVG units at 100px container ≈ 29px on screen — clearly smaller than the 40px h2.
-     Two-class specificity beats B9's single-class .ek-calligraphy-text{90px} rule (≈17px, too faint). */
-  .ek-hero-lockup .ek-calligraphy-text { font-size: 150px; }
+  .ek-hero-calligraphy { display: none; }
 }
 
 /* B5/B9 — phone-range overrides (767px = mobile nav threshold) */
