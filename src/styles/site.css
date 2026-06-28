@@ -406,6 +406,21 @@
   .ek-trust__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; justify-items: center; }
   .ek-trust__logo { font-size: 18px; }
   .ek-trust__logo:last-child { grid-column: 1 / -1; }
+
+  /* Layout rhythm — home mobile */
+  /* The kit.css ≤600px block sets .ek-globe-sec { padding: 64px 0 } which overrides the
+     default .ek-globe-sec--joined { padding-top: 24px } join rule (lower in source order).
+     Re-establish the tighter join here — site.css loads after kit.css so this wins. */
+  .ek-globe-sec--joined { padding-top: var(--space-md); }
+  /* 72px grid gap between globe canvas and panel is too large on a single-column stack */
+  .ek-globe-grid { gap: 24px; }
+  /* 40px label margin equals section padding — removes rhythm; step to 24px */
+  .ek-trust__label { margin-bottom: 24px; }
+  /* section head 40px margin-bottom matches section padding — flatten the beat; tighten to 24px */
+  .ek-section__head { margin-bottom: 24px; }
+  /* hero lead: 19px is above the design lead token (18px) and reads heavy at 40px display;
+     step to 17px/26px and tighten the top margin for a crisper headline–lead gap */
+  .ek-hero-lead { font-size: 17px; line-height: 26px; margin-top: 20px; }
 }
 
 /* ---------------------------------------------------------------- Services intro */
