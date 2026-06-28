@@ -14,12 +14,17 @@ export function MobileNav() {
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+  const drawerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
+  }, [open]);
+
+  React.useEffect(() => {
+    if (drawerRef.current) drawerRef.current.inert = !open;
   }, [open]);
 
   function nav(href: string) {
@@ -51,7 +56,7 @@ export function MobileNav() {
           </button>
         </div>
       </div>
-      <div className={"ek-drawer" + (open ? " is-open" : "")} aria-hidden={!open} {...(!open ? { inert: "" } : {})}>
+      <div ref={drawerRef} className={"ek-drawer" + (open ? " is-open" : "")} aria-hidden={!open}>
         <div className="ek-drawer__top">
           <Link
             href="/"
