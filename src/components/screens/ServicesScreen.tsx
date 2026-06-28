@@ -4,7 +4,6 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ds/Button";
-import { Eyebrow } from "@/components/ds/Eyebrow";
 import { BentoCard } from "@/components/ds/BentoCard";
 
 /**
@@ -50,10 +49,7 @@ export function ServicesScreen() {
       <section className="ek-section ek-offwhite">
         <div className="ek-container ek-pillar ek-pillar--reverse">
           <Reveal className="ek-pillar__copy">
-            <Eyebrow>
-              Who we are
-            </Eyebrow>
-            <h2 className="ek-h2">A professional events company</h2>
+            <h2 className="ek-h2">We create unforgettable event experiences</h2>
             <p className="ek-lead">
               You don&apos;t run events for a living — we do. Whether it&apos;s your first booth or
               your tenth this year, you get a senior events department without putting one on the
@@ -73,9 +69,6 @@ export function ServicesScreen() {
       <section className="ek-section ek-surface">
         <div className="ek-container">
           <Reveal className="ek-section__head">
-            <Eyebrow>
-              Our know-how
-            </Eyebrow>
             <h2 className="ek-h2">We handle everything between the brief and the breakdown.</h2>
           </Reveal>
           <div className="ek-grid3" style={{ alignItems: "stretch" }}>
@@ -113,10 +106,7 @@ export function ServicesScreen() {
       <section className="ek-section ek-offwhite">
         <div className="ek-container">
           <Reveal className="ek-section__head">
-            <Eyebrow>
-              Why the real return
-            </Eyebrow>
-            <h2 className="ek-h2">The real return is saving time.</h2>
+            <h2 className="ek-h2">The real return.</h2>
             <p className="ek-lead">
               The saving that matters isn&apos;t just the invoice — it&apos;s the weeks your people
               spend on planning and operations.
