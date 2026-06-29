@@ -680,6 +680,21 @@
   .edara-price:active { transform: none; transition: none; }
 }
 
+/* contact(mobile)/delight: form success check icon mounts flat — the
+   ek-form__success state replaces the form entirely, so no prior animation
+   exists. A pop-in scale (overshoot to 1.2, settle to 1) makes the check feel
+   earned after the user sent their inquiry. Scoped to ≤600px + no-preference. */
+@keyframes ek-success-pop {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-form__success .material-symbols-outlined {
+    animation: ek-success-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
 /* pricing(mobile)/delight: the selectbar mounts when a user taps a pricing
    tier — without animation it just appears flat (jarring on mobile). A slide-up
    entry makes the confirmation moment feel intentional and satisfying. The bar
