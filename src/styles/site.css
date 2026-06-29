@@ -576,6 +576,11 @@
   .ek-h2 { text-wrap: balance; }
   .ek-h3 { text-wrap: balance; }
 
+  /* pricing(mobile)/typeset: ek-ambient__title is already 36px at ≤900px
+     (kit.css). At 288px inner width "Not sure which partnership fits?" splits
+     on arbitrary word boundaries. text-wrap:balance distributes lines evenly. */
+  .ek-ambient__title { text-wrap: balance; }
+
   /* pricing(mobile)/layout: edara-price has 40px padding — at 320px that
      leaves only 208px content width. The price amount ("€9,900" at 56px +
      "/mo · billed quarterly" on the same flex row) overflows by ~175px.
