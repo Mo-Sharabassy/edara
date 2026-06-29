@@ -593,3 +593,19 @@
 @media (prefers-reduced-motion: reduce) {
   .edara-card--interactive:active { transform: none; transition: none; }
 }
+
+/* home(mobile)/delight: the event photo thumbnail opens the lightbox on tap
+   but has no affordance on mobile — no hover cursor, no label. A two-pulse
+   glow fires 2s after load (once the user has oriented themselves) and then
+   stops so it never becomes annoying on repeat visits. Scoped to ≤600px so
+   desktop is unaffected; suppressed entirely for reduced-motion. */
+@keyframes ek-media-invite {
+  0%   { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0); }
+  45%  { box-shadow: 0 0 0 8px rgba(66, 133, 244, 0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0); }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-evdetail__media {
+    animation: ek-media-invite 1.4s ease-in-out 2s 2;
+  }
+}
