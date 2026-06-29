@@ -576,6 +576,13 @@
   .ek-h2 { text-wrap: balance; }
   .ek-h3 { text-wrap: balance; }
 
+  /* contact(mobile)/layout: ek-contact-hero has padding-top:128px with no
+     mobile override — creates a large dead zone below the mobile nav bar.
+     ek-contactform-card has 40px padding (same issue as edara-price): at
+     320px inner width only 208px of content, too tight for form fields. */
+  .ek-contact-hero { padding-top: 56px; }
+  .ek-contactform-card { padding: 24px; }
+
   /* pricing(mobile)/typeset: ek-ambient__title is already 36px at ≤900px
      (kit.css). At 288px inner width "Not sure which partnership fits?" splits
      on arbitrary word boundaries. text-wrap:balance distributes lines evenly. */
