@@ -563,6 +563,11 @@
      Reduce to 0.1em so it settles into 2 lines, matching the rhythm of the
      logo row below it. */
   .ek-trust__label { letter-spacing: 0.1em; }
+
+  /* services(mobile)/layout: 24px gap between full-width stacked value cards
+     reads as section-level spacing, not card-list spacing. 16px tightens the
+     trio into a cohesive group without losing the card-card breathing room. */
+  .ek-values { gap: 16px; }
 }
 
 /* home(mobile)/adapt: at 320px the ek-evdetail internal grid gives the body
