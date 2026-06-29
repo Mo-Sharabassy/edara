@@ -57,7 +57,7 @@ export function ContactScreen() {
   return (
     <div data-screen-label="Contact" className="ek-route ek-contactpage">
       {/* Header + split */}
-      <section className="ek-section" style={{ paddingTop: 128 }}>
+      <section className="ek-section ek-contact-hero">
         <div className="ek-container ek-contactsplit">
           <aside className="ek-contactaside">
             <div>
