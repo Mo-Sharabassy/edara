@@ -612,6 +612,15 @@
                 border-color 0.12s ease;
   }
 }
+/* services(mobile)/delight: desktop hover rotates the value icon (-6deg) but
+   touch never triggers hover — the icon stays static on tap. Mirror the icon
+   nudge on :active so touch gets the same characterful response as desktop. */
+@media (hover: none) and (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-value:active .ek-value__icon {
+    transform: rotate(-6deg) scale(1.1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .edara-card--interactive:active { transform: none; transition: none; }
   .ek-value:active { transform: none; transition: none; }
