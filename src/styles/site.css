@@ -564,3 +564,12 @@
      logo row below it. */
   .ek-trust__label { letter-spacing: 0.1em; }
 }
+
+/* home(mobile)/adapt: at 320px the ek-evdetail internal grid gives the body
+   column only 104px — event titles at 22px clip. Stack photo above body at
+   ≤360px so both columns have full container width. Only affects 320–360px
+   (old/small Androids); 375px+ is fine at 159px body width. */
+@media (max-width: 360px) {
+  .ek-evdetail { grid-template-columns: 1fr; }
+  .ek-evdetail__media { min-height: 120px; }
+}
