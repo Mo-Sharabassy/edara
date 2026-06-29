@@ -198,6 +198,7 @@
 
 /* ---------------------------------------------------------------- Contact page */
 .ek-contactpage { background: var(--surface-page); }
+.ek-contact-hero { padding-top: 128px; }
 .ek-contactsplit { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
 .ek-contactaside { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 28px; }
 .ek-contactaside__lead { font-family: var(--font-body); font-size: 18px; line-height: 28px; color: var(--on-surface-variant); margin: 0; }
@@ -430,6 +431,21 @@
   /* hero lead: 19px is above the design lead token (18px) and reads heavy at 40px display;
      step to 17px/26px and tighten the top margin for a crisper headline–lead gap */
   .ek-hero-lead { font-size: 17px; line-height: 26px; margin-top: 20px; }
+
+  /* P1 — Contact hero: inline paddingTop:128 was overriding the ek-section mobile
+     collapse; extracted to .ek-contact-hero class so this override can take effect. */
+  .ek-contact-hero { padding-top: 56px; }
+
+  /* P1 — Pricing model toggle: inline-flex + no constraint overflows at 320–390px.
+     Stretch to full container width; each option takes an equal share. */
+  .ek-modeltoggle { width: 100%; box-sizing: border-box; }
+  .ek-modeltoggle__opt { flex: 1; padding: 10px 10px; }
+  .ek-modeltoggle__sub { white-space: normal; text-align: center; }
+
+  /* P2 — Department tab info chip: "A FIXED EVENTS DEPARTMENT · BILLED ONCE EVERY QUARTER"
+     at 11px uppercase overflows its 999px-radius pill at 320px.
+     Allow wrapping and switch to card radius so multi-line sits clean. */
+  .ek-savechip { max-width: 100%; white-space: normal; border-radius: var(--radius-xl); text-align: center; }
 }
 
 /* ---------------------------------------------------------------- Services intro */
