@@ -638,6 +638,18 @@
                 border-color 0.12s ease;
   }
 
+  /* contact(mobile)/animate: FAQ question buttons and info rows have no touch
+     feedback — desktop hover states don't fire. Subtle background flash on
+     :active gives tactile confirmation without distracting from the content. */
+  .ek-faqq:active {
+    background: var(--surface-container-low);
+    transition: background 0.08s ease;
+  }
+  .ek-inforow:active {
+    background: var(--surface-container-low);
+    transition: background 0.08s ease;
+  }
+
   /* pricing(mobile)/animate: edara-price hover (scale + shadow) and
      ek-modeltoggle__opt hover don't fire on touch. Add :active states so
      tapping a pricing card or model-toggle button has tactile confirmation. */
