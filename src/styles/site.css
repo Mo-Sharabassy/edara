@@ -568,6 +568,13 @@
      reads as section-level spacing, not card-list spacing. 16px tightens the
      trio into a cohesive group without losing the card-card breathing room. */
   .ek-values { gap: 16px; }
+
+  /* services(mobile)/typeset: section headings lack text-wrap:balance so long
+     headings ("We handle everything between the brief and the breakdown.") hit
+     awkward word-boundary wraps at 288px. balance distributes lines evenly for
+     a more considered break. Also applied to ek-h3 for card titles. */
+  .ek-h2 { text-wrap: balance; }
+  .ek-h3 { text-wrap: balance; }
 }
 
 /* home(mobile)/adapt: at 320px the ek-evdetail internal grid gives the body
