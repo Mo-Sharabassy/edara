@@ -656,6 +656,20 @@
   .edara-price:active { transform: none; transition: none; }
 }
 
+/* pricing(mobile)/delight: the selectbar mounts when a user taps a pricing
+   tier — without animation it just appears flat (jarring on mobile). A slide-up
+   entry makes the confirmation moment feel intentional and satisfying. The bar
+   is already sticky-bottom; the animation plays once on mount only. */
+@keyframes ek-selectbar-in {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-selectbar {
+    animation: ek-selectbar-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
 /* home(mobile)/delight: the event photo thumbnail opens the lightbox on tap
    but has no affordance on mobile — no hover cursor, no label. A two-pulse
    glow fires 2s after load (once the user has oriented themselves) and then
