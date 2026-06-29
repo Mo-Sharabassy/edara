@@ -573,3 +573,23 @@
   .ek-evdetail { grid-template-columns: 1fr; }
   .ek-evdetail__media { min-height: 120px; }
 }
+
+/* home(mobile)/animate: hover states don't fire on touch; add :active press
+   feedback so BentoCards and event-list rows respond to taps with tactile
+   confirmation. Uses @media (hover:none) so desktop mouse is unaffected.
+   Easing: ease-out-quint on entry, instant on release per animate.md spec. */
+@media (hover: none) {
+  .edara-card--interactive:active {
+    transform: scale(0.97);
+    border-color: var(--primary);
+    transition: transform 0.12s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.12s ease;
+  }
+  .ek-evrow:active {
+    background: rgba(66, 133, 244, 0.25);
+    transition: background 0.08s ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .edara-card--interactive:active { transform: none; transition: none; }
+}
