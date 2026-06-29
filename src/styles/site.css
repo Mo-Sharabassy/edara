@@ -576,6 +576,11 @@
   .ek-h2 { text-wrap: balance; }
   .ek-h3 { text-wrap: balance; }
 
+  /* contact(mobile)/typeset: the h1 in ContactScreen has an inline style
+     fontSize:48 which overrides the 36px responsive reduction in kit.css at
+     ≤900px — heading stays 48px on phone. !important wins over inline styles. */
+  .ek-contact-hero .ek-display { font-size: 36px !important; line-height: 44px !important; }
+
   /* contact(mobile)/layout: ek-contact-hero has padding-top:128px with no
      mobile override — creates a large dead zone below the mobile nav bar.
      ek-contactform-card has 40px padding (same issue as edara-price): at
