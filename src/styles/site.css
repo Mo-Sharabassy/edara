@@ -550,4 +550,11 @@
     mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
   }
+
+  /* home(mobile)/layout: ek-linkh2 uses inline-flex which prevents its anonymous
+     text node from wrapping. At 320px the heading + arrow totals ~530px and
+     overflows the 288px container. Switch to block so text wraps naturally;
+     the arrow span needs inline-block to preserve its translateX transition. */
+  .ek-linkh2 { display: block; }
+  .ek-linkh2 .ek-linkh2__arrow { display: inline-block; vertical-align: middle; margin-left: 8px; }
 }
