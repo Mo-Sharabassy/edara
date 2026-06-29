@@ -550,4 +550,177 @@
     mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
   }
+
+  /* home(mobile)/layout: ek-linkh2 uses inline-flex which prevents its anonymous
+     text node from wrapping. At 320px the heading + arrow totals ~530px and
+     overflows the 288px container. Switch to block so text wraps naturally;
+     the arrow span needs inline-block to preserve its translateX transition. */
+  .ek-linkh2 { display: block; }
+  .ek-linkh2 .ek-linkh2__arrow { display: inline-block; vertical-align: middle; margin-left: 8px; }
+
+  /* home(mobile)/typeset: trust bar label has 0.18em tracking — at narrow
+     widths this forces a 3-line split on "WE'VE ALREADY BEEN ON THE GROUND AT".
+     Reduce to 0.1em so it settles into 2 lines, matching the rhythm of the
+     logo row below it. */
+  .ek-trust__label { letter-spacing: 0.1em; }
+
+  /* services(mobile)/layout: 24px gap between full-width stacked value cards
+     reads as section-level spacing, not card-list spacing. 16px tightens the
+     trio into a cohesive group without losing the card-card breathing room. */
+  .ek-values { gap: 16px; }
+
+  /* services(mobile)/typeset: section headings lack text-wrap:balance so long
+     headings ("We handle everything between the brief and the breakdown.") hit
+     awkward word-boundary wraps at 288px. balance distributes lines evenly for
+     a more considered break. Also applied to ek-h3 for card titles. */
+  .ek-h2 { text-wrap: balance; }
+  .ek-h3 { text-wrap: balance; }
+
+  /* contact(mobile)/typeset: the h1 in ContactScreen has an inline style
+     fontSize:48 which overrides the 36px responsive reduction in kit.css at
+     ≤900px — heading stays 48px on phone. !important wins over inline styles. */
+  .ek-contact-hero .ek-display { font-size: 36px !important; line-height: 44px !important; }
+
+  /* contact(mobile)/layout: ek-contact-hero has padding-top:128px with no
+     mobile override — creates a large dead zone below the mobile nav bar.
+     ek-contactform-card has 40px padding (same issue as edara-price): at
+     320px inner width only 208px of content, too tight for form fields. */
+  .ek-contact-hero { padding-top: 56px; }
+  .ek-contactform-card { padding: 24px; }
+
+  /* pricing(mobile)/typeset: ek-ambient__title is already 36px at ≤900px
+     (kit.css). At 288px inner width "Not sure which partnership fits?" splits
+     on arbitrary word boundaries. text-wrap:balance distributes lines evenly. */
+  .ek-ambient__title { text-wrap: balance; }
+
+  /* pricing(mobile)/layout: edara-price has 40px padding — at 320px that
+     leaves only 208px content width. The price amount ("€9,900" at 56px +
+     "/mo · billed quarterly" on the same flex row) overflows by ~175px.
+     Reduce card padding to 24px and price font to 40px; wrap the amount row
+     so the per-text drops to its own line on the narrowest viewports. */
+  .edara-price { padding: 24px; }
+  .edara-price__amt { flex-wrap: wrap; }
+  .edara-price__amt b { font-size: 40px; line-height: 48px; }
+}
+
+/* home(mobile)/adapt: at 320px the ek-evdetail internal grid gives the body
+   column only 104px — event titles at 22px clip. Stack photo above body at
+   ≤360px so both columns have full container width. Only affects 320–360px
+   (old/small Androids); 375px+ is fine at 159px body width. */
+@media (max-width: 360px) {
+  .ek-evdetail { grid-template-columns: 1fr; }
+  .ek-evdetail__media { min-height: 120px; }
+}
+
+/* home(mobile)/animate: hover states don't fire on touch; add :active press
+   feedback so BentoCards and event-list rows respond to taps with tactile
+   confirmation. Uses @media (hover:none) so desktop mouse is unaffected.
+   Easing: ease-out-quint on entry, instant on release per animate.md spec. */
+@media (hover: none) {
+  .edara-card--interactive:active {
+    transform: scale(0.97);
+    border-color: var(--primary);
+    transition: transform 0.12s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.12s ease;
+  }
+  .ek-evrow:active {
+    background: rgba(66, 133, 244, 0.25);
+    transition: background 0.08s ease;
+  }
+
+  /* services(mobile)/animate: ek-value card hover (translateY + border + shadow)
+     doesn't fire on touch — value cards had no tactile response at all on phone.
+     scale(0.97) on :active matches the BentoCard treatment above for consistency. */
+  .ek-value:active {
+    transform: scale(0.97);
+    border-color: var(--primary);
+    transition: transform 0.12s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.12s ease;
+  }
+
+  /* contact(mobile)/animate: FAQ question buttons and info rows have no touch
+     feedback — desktop hover states don't fire. Subtle background flash on
+     :active gives tactile confirmation without distracting from the content. */
+  .ek-faqq:active {
+    background: var(--surface-container-low);
+    transition: background 0.08s ease;
+  }
+  .ek-inforow:active {
+    background: var(--surface-container-low);
+    transition: background 0.08s ease;
+  }
+
+  /* pricing(mobile)/animate: edara-price hover (scale + shadow) and
+     ek-modeltoggle__opt hover don't fire on touch. Add :active states so
+     tapping a pricing card or model-toggle button has tactile confirmation. */
+  .edara-price:active {
+    transform: scale(0.98);
+    border-color: var(--primary);
+    transition: transform 0.12s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.12s ease;
+  }
+  .ek-modeltoggle__opt:active {
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    transition: background 0.1s ease, box-shadow 0.1s ease;
+  }
+}
+/* services(mobile)/delight: desktop hover rotates the value icon (-6deg) but
+   touch never triggers hover — the icon stays static on tap. Mirror the icon
+   nudge on :active so touch gets the same characterful response as desktop. */
+@media (hover: none) and (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-value:active .ek-value__icon {
+    transform: rotate(-6deg) scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edara-card--interactive:active { transform: none; transition: none; }
+  .ek-value:active { transform: none; transition: none; }
+  .edara-price:active { transform: none; transition: none; }
+}
+
+/* contact(mobile)/delight: form success check icon mounts flat — the
+   ek-form__success state replaces the form entirely, so no prior animation
+   exists. A pop-in scale (overshoot to 1.2, settle to 1) makes the check feel
+   earned after the user sent their inquiry. Scoped to ≤600px + no-preference. */
+@keyframes ek-success-pop {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-form__success .material-symbols-outlined {
+    animation: ek-success-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+/* pricing(mobile)/delight: the selectbar mounts when a user taps a pricing
+   tier — without animation it just appears flat (jarring on mobile). A slide-up
+   entry makes the confirmation moment feel intentional and satisfying. The bar
+   is already sticky-bottom; the animation plays once on mount only. */
+@keyframes ek-selectbar-in {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-selectbar {
+    animation: ek-selectbar-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+/* home(mobile)/delight: the event photo thumbnail opens the lightbox on tap
+   but has no affordance on mobile — no hover cursor, no label. A two-pulse
+   glow fires 2s after load (once the user has oriented themselves) and then
+   stops so it never becomes annoying on repeat visits. Scoped to ≤600px so
+   desktop is unaffected; suppressed entirely for reduced-motion. */
+@keyframes ek-media-invite {
+  0%   { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0); }
+  45%  { box-shadow: 0 0 0 8px rgba(66, 133, 244, 0.3); }
+  100% { box-shadow: 0 0 0 0 rgba(66, 133, 244, 0); }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference) {
+  .ek-evdetail__media {
+    animation: ek-media-invite 1.4s ease-in-out 2s 2;
+  }
 }
