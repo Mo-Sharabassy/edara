@@ -59,11 +59,11 @@
 .ek-drawer.is-open { transform: none; }
 .ek-drawer__top { display: flex; align-items: center; justify-content: space-between; height: 44px; margin-bottom: 24px; }
 .ek-drawer__links { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
-.ek-drawer__link { font-family: var(--font-display); font-size: 30px; font-weight: 600; color: var(--on-surface);
+.ek-drawer__link { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--on-surface);
   text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--border-subtle); cursor: pointer;
   display: flex; align-items: center; justify-content: space-between; transition: color .2s ease; }
 .ek-drawer__link:hover, .ek-drawer__link--active { color: var(--primary); }
-.ek-drawer__link .material-symbols-outlined { font-size: 24px; color: var(--secondary); }
+.ek-drawer__link .material-symbols-outlined { font-size: 20px; color: var(--secondary); }
 .ek-drawer__cta { margin-top: 32px; }
 .ek-drawer__meta { margin-top: auto; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
   text-transform: uppercase; color: var(--on-surface-variant); }

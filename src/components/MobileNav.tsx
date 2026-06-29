@@ -93,7 +93,7 @@ export function MobileNav() {
             Book a Strategy Call
           </Button>
         </div>
-        <p className="ek-drawer__meta">Edara · Your Event Department, on Demand</p>
+        <p className="ek-drawer__meta">Edara · Events as a Service</p>
       </div>
     </>
   );
