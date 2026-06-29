@@ -557,4 +557,10 @@
      the arrow span needs inline-block to preserve its translateX transition. */
   .ek-linkh2 { display: block; }
   .ek-linkh2 .ek-linkh2__arrow { display: inline-block; vertical-align: middle; margin-left: 8px; }
+
+  /* home(mobile)/typeset: trust bar label has 0.18em tracking — at narrow
+     widths this forces a 3-line split on "WE'VE ALREADY BEEN ON THE GROUND AT".
+     Reduce to 0.1em so it settles into 2 lines, matching the rhythm of the
+     logo row below it. */
+  .ek-trust__label { letter-spacing: 0.1em; }
 }
