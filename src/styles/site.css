@@ -575,6 +575,15 @@
      a more considered break. Also applied to ek-h3 for card titles. */
   .ek-h2 { text-wrap: balance; }
   .ek-h3 { text-wrap: balance; }
+
+  /* pricing(mobile)/layout: edara-price has 40px padding — at 320px that
+     leaves only 208px content width. The price amount ("€9,900" at 56px +
+     "/mo · billed quarterly" on the same flex row) overflows by ~175px.
+     Reduce card padding to 24px and price font to 40px; wrap the amount row
+     so the per-text drops to its own line on the narrowest viewports. */
+  .edara-price { padding: 24px; }
+  .edara-price__amt { flex-wrap: wrap; }
+  .edara-price__amt b { font-size: 40px; line-height: 48px; }
 }
 
 /* home(mobile)/adapt: at 320px the ek-evdetail internal grid gives the body
