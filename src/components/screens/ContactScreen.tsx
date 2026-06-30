@@ -91,6 +91,7 @@ export function ContactScreen() {
           <div>
             {plan && (
               <div
+                className="ek-plan-chip"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -106,6 +107,7 @@ export function ContactScreen() {
                   {plan.name} · {plan.price}{plan.suffix ?? "/mo"} · {plan.billing}
                 </span>
                 <button
+                  className="ek-plan-chip__x"
                   onClick={deselectPlan}
                   aria-label="Remove selected plan"
                   style={{
