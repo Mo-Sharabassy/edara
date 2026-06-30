@@ -11,7 +11,7 @@ import { savePlan } from "@/lib/plan";
 /**
  * Pricing screen — two partnership models:
  *   • Department — a fixed fractional events department, billed quarterly.
- *   • Agency     — 15% of managed event spend, performance-aligned, no retainer.
+ *   • Agency     — 12% of managed event spend, performance-aligned, no retainer.
  */
 type DeptTier = {
   id: string;
@@ -29,8 +29,8 @@ const DEPT_TIERS: DeptTier[] = [
     id: "planner",
     tier: "Entry",
     name: "Planner",
-    monthly: 3300,
-    description: "For teams testing the waters — Running 3-5 events a year.",
+    monthly: 3000,
+    description: "For teams testing the waters — Running 3 events a year.",
     features: ["Events planning", "Booth & vendor logistics", "Sponsorships negotiation"],
     cta: "Partner with Planner",
   },
@@ -38,11 +38,11 @@ const DEPT_TIERS: DeptTier[] = [
     id: "department",
     tier: "Most teams partner here",
     name: "Fractional",
-    monthly: 5700,
+    monthly: 5000,
     featured: true,
     description: (
       <>
-        Our core partnership — a fractional events department running up to 7 events a year.
+        Our core partnership — a fractional events department running 5 events a year.
         <br />
         <br />
         Everything Planner +
@@ -60,10 +60,10 @@ const DEPT_TIERS: DeptTier[] = [
     id: "fractional",
     tier: "Scale",
     name: "Unlimited",
-    monthly: 9900,
+    monthly: 8000,
     description: (
       <>
-        Unlimited strategic planning and execution for 8+ global roadshows — a department without
+        Unlimited strategic planning and execution for 8 events a year — a department without
         the headcount.
         <br />
         <br />
@@ -85,7 +85,7 @@ function ModelToggle({
   setModel: (m: string) => void;
 }) {
   const options = [
-    { id: "agency", label: "Agency", sub: "15% of managed spend" },
+    { id: "agency", label: "Agency", sub: "12% of managed spend" },
     { id: "department", label: "Department", sub: "Fixed quarterly partnership" },
   ];
   return (
@@ -121,7 +121,7 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
     {
       icon: "receipt_long",
       t: "One transparent line",
-      d: "Booth, sponsorship, venue and logistics rolled into a single 15% fee. No project markups, no surprises.",
+      d: "Booth, sponsorship, venue and logistics rolled into a single 12% fee. No project markups, no surprises.",
     },
   ];
   return (
@@ -129,7 +129,7 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
       <Reveal className="ek-agencycard">
         <div className="ek-agencycard__figure">
           <span className="ek-agencycard__pct">
-            15<small>%</small>
+            12<small>%</small>
           </span>
           <p className="ek-agencycard__cap">of managed event spend</p>
           <Badge variant="soft">Performance-aligned</Badge>
@@ -139,7 +139,7 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
             Partner on performance
           </h3>
           <p className="ek-lead" style={{ marginBottom: 24 }}>
-            Pay as you grow. Edara charges a flat 15% of the budget we manage on your behalf — We
+            Pay as you grow. Edara charges a flat 12% of the budget we manage on your behalf — We
             make sure every dollar of that budget work harder for you.
           </p>
           <Button
@@ -150,10 +150,10 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
               savePlan({
                 name: "Custom Partnership",
                 price: "Agency model",
-                billing: "15% of managed event spend",
+                billing: "12% of managed event spend",
                 suffix: "",
                 message:
-                  "I'd like to explore a custom Agency partnership (flat 15% of managed event spend). A bit about our upcoming events: ",
+                  "I'd like to explore a custom Agency partnership (flat 12% of managed event spend). A bit about our upcoming events: ",
               });
               onContact();
             }}
@@ -307,7 +307,7 @@ export function PricingScreen() {
                     "Cost structure",
                     "€100k+ salary + benefits",
                     "15–20% commission + fees",
-                    "Retainer fee or a fixed 15%",
+                    "Retainer fee or a fixed 12%",
                   ],
                   [
                     "Budget control",
