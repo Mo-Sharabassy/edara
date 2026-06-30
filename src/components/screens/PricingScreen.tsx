@@ -142,7 +142,22 @@ function AgencyModel({ onContact }: { onContact: () => void }) {
             Pay as you grow. Edara charges a flat 15% of the budget we manage on your behalf — We
             make sure every dollar of that budget work harder for you.
           </p>
-          <Button variant="primary" size="lg" icon="arrow_forward" onClick={onContact}>
+          <Button
+            variant="primary"
+            size="lg"
+            icon="arrow_forward"
+            onClick={() => {
+              savePlan({
+                name: "Custom Partnership",
+                price: "Agency model",
+                billing: "15% of managed event spend",
+                suffix: "",
+                message:
+                  "I'd like to explore a custom Agency partnership (flat 15% of managed event spend). A bit about our upcoming events: ",
+              });
+              onContact();
+            }}
+          >
             Custom partnership
           </Button>
         </div>

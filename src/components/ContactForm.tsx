@@ -46,7 +46,7 @@ export function ContactForm({
   const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
-    if (defaultMessage) setVals((v) => ({ ...v, message: defaultMessage }));
+    setVals((v) => ({ ...v, message: defaultMessage }));
   }, [defaultMessage]);
 
   function set(k: keyof Values, val: string) {

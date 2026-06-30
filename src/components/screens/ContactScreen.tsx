@@ -6,7 +6,7 @@ import { Eyebrow } from "@/components/ds/Eyebrow";
 import { Badge } from "@/components/ds/Badge";
 import { ContactForm } from "@/components/ContactForm";
 import { FaqItem } from "@/components/FaqItem";
-import { readPlan, type SelectedPlan } from "@/lib/plan";
+import { readPlan, clearPlan, type SelectedPlan } from "@/lib/plan";
 
 const FAQS: { q: string; a: React.ReactNode }[] = [
   {
@@ -50,8 +50,14 @@ export function ContactScreen() {
     setPlan(readPlan());
   }, []);
 
+  function deselectPlan() {
+    clearPlan();
+    setPlan(null);
+  }
+
   const defaultMessage = plan
-    ? `I'd like to move forward with ${plan.name} (${plan.price}/mo, ${plan.billing} billing). A bit about our upcoming events: `
+    ? (plan.message ??
+        `I'd like to move forward with ${plan.name} (${plan.price}${plan.suffix ?? "/mo"}, ${plan.billing} billing). A bit about our upcoming events: `)
     : "";
 
   return (
@@ -97,8 +103,28 @@ export function ContactScreen() {
                 <span
                   style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--on-surface)" }}
                 >
-                  {plan.name} · {plan.price}/mo · {plan.billing}
+                  {plan.name} · {plan.price}{plan.suffix ?? "/mo"} · {plan.billing}
                 </span>
+                <button
+                  onClick={deselectPlan}
+                  aria-label="Remove selected plan"
+                  style={{
+                    marginLeft: "auto",
+                    flexShrink: 0,
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    color: "var(--on-surface-variant)",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    padding: 4,
+                    borderRadius: 4,
+                  }}
+                >
+                  <span className="material-symbols-outlined" aria-hidden="true" style={{ fontSize: 18 }}>
+                    close
+                  </span>
+                </button>
               </div>
             )}
             <div className="ek-contactform-card">
