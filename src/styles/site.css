@@ -709,6 +709,28 @@
   }
 }
 
+/* contact(mobile)/layout — plan chip X button: on mobile the flex row wraps
+   and marginLeft:auto pushes the X to a lonely third line, disconnected from
+   the chip it controls. position:relative on the container + padding-right
+   reserves 40px so text never flows under the X; absolute top-right anchors
+   the button to the chip's corner regardless of how the plan text wraps.
+   min-width/height ensure a 44px touch target. Desktop is unaffected — none
+   of these rules apply above 600px. */
+@media (max-width: 600px) {
+  .ek-plan-chip {
+    position: relative;
+    padding-right: 40px;
+  }
+  .ek-plan-chip__x {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 44px;
+    min-height: 44px;
+    justify-content: center;
+  }
+}
+
 /* home(mobile)/delight: the event photo thumbnail opens the lightbox on tap
    but has no affordance on mobile — no hover cursor, no label. A two-pulse
    glow fires 2s after load (once the user has oriented themselves) and then
